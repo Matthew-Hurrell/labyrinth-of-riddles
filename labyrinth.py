@@ -39,7 +39,8 @@ def leave():
 def end():
     print(end_paragraph)
     while play_game:
-        choice = input("Do you take the treasure or leave without it? (take/leave) \n").lower().strip()
+        choice = input("Do you take the treasure or leave without it? (\
+            take/leave) \n").lower().strip()
         if choice == "take" or choice == "t":
             take_treasure()
             break
@@ -99,14 +100,16 @@ def fifth_chapter():
     print(fifth_paragraph)
     print(path_eight)
     while play_game:
-        choice = input("Which path will you choose? (left/right) \n").lower().strip()
+        choice = input("Which path will you choose? (left/right) \n")\
+            .lower().strip()
         if choice == "right" or choice == "r":
             fifth_riddle()
             break
         elif choice == "left" or choice == "l":
             print(left_descent)
             while play_game:
-                start = input("Do you wish to play again? (yes/no) \n").lower().strip()
+                start = input("Do you wish to play again? (yes/no) \n")\
+                    .lower().strip()
                 if start == "yes" or start == "y":
                     print("\nLet it begin! \n")
                     begin_labyrinth()
@@ -159,9 +162,11 @@ def fourth_chapter():
     available_questions = 1
     while play_game:
         if available_questions == 1:
-            choice = input("Choose door or ask question? (door/ask) \n").lower().strip()
+            choice = input("Choose door or ask question? (door/ask) \n")\
+                .lower().strip()
             if choice == "door" or choice == "d":
-                choice = input("Which door do you choose? (right/left) \n").lower().strip()
+                choice = input("Which door do you choose? (right/left) \n")\
+                    .lower().strip()
                 if choice == "right" or choice == "r":
                     right_door()
                     break
@@ -173,21 +178,25 @@ def fourth_chapter():
             elif choice == "ask" or choice == "a":
                 print(which_question)
                 available_questions -= 1
-                choice = input("Which question do you ask? (a/b/c/d) \n").lower().strip()
+                choice = input("Which question do you ask? (a/b/c/d) \n")\
+                    .lower().strip()
                 if choice == "a" or choice == "question a":
                     print("\nThe left door leads to death.\n")
                 elif choice == "b" or choice == "question b":
                     print("\nThe right door leads to death.\n")
                 elif choice == "c" or choice == "question c":
-                    print("\nThe other figure would say the left door leads to death.\n")
+                    print("\nThe other figure would say the left door leads to\
+                         death.\n")
                 elif choice == "d" or choice == "question d":
-                    print("\nThe other figure would say the left door leads to death.\n")
+                    print("\nThe other figure would say the left door leads to\
+                         death.\n")
                 else:
                     print("Invalid input. Please try again. \n")
             else:
                 print("Invalid input. Please try again. \n")
         else:
-            choice = input("Which door do you choose? (right/left) \n").lower().strip()
+            choice = input("Which door do you choose? (right/left) \n")\
+                .lower().strip()
             if choice == "right" or choice == "r":
                 right_door()
                 break
@@ -223,14 +232,16 @@ def third_chapter():
     print(third_paragraph)
     print(path_four)
     while play_game:
-        choice = input("Which path do you take? (left/right/forward) \n").lower().strip()
+        choice = input("Which path do you take? (left/right/forward) \n")\
+            .lower().strip()
         if choice == "left" or choice == "l":
             third_riddle()
             break
         elif choice == "right" or choice == "r":
             print(right)
             while play_game:
-                back = input("Do you want to return back to the last junction or exit the labyrinth? (back/exit) \n").lower().strip()
+                back = input("Do you want to return back to the last junction\
+                     or exit the labyrinth? (back/exit) \n").lower().strip()
                 if back == "back" or back == "b":
                     print(back)
                     break
@@ -241,7 +252,8 @@ def third_chapter():
         elif choice == "forward" or choice == "f":
             print(forward)
             while play_game:
-                start = input("Do you wish to play again? (yes/no) \n").lower().strip()
+                start = input("Do you wish to play again? (yes/no) \n")\
+                    .lower().strip()
                 if start == "yes" or start == "y":
                     print("\nLet it begin! \n")
                     begin_labyrinth()
@@ -279,14 +291,16 @@ def second_chapter():
     print(second_paragraph)
     print(path_two)
     while play_game:
-        choice = input("Which path will you choose? (left/right) \n").lower().strip()
+        choice = input("Which path will you choose? (left/right) \n")\
+            .lower().strip()
         if choice == "right" or choice == "r":
             second_riddle()
             break
         elif choice == "left" or choice == "l":
             print(second_left)
             while play_game:
-                start = input("Do you wish to play again? (yes/no) \n").lower().strip()
+                start = input("Do you wish to play again? (yes/no) \n")\
+                    .lower().strip()
                 if start == "yes" or start == "y":
                     print("\nLet it begin! \n")
                     begin_labyrinth()
@@ -301,7 +315,8 @@ def second_chapter():
 def you_die():
     print(final_words)
     while play_game:
-        start = input("Would you like to try again? (yes/no) \n").lower().strip()
+        start = input("Would you like to try again? (yes/no) \n")\
+            .lower().strip()
         if start == "yes" or start == "y":
             print("Let it begin! \n")
             begin_labyrinth()
@@ -336,7 +351,8 @@ def first_riddle():
 def begin_labyrinth():
     print(first_paragraph)
     while play_game:
-        choice = input("Which path will you choose? (forward/left) \n").lower().strip()
+        choice = input("Which path will you choose? (forward/left) \n")\
+            .lower().strip()
         if choice == "forward" or choice == "f":
             first_riddle()
             break
@@ -356,7 +372,8 @@ or do you want to exit the labyrinth (back/exit) \n").lower().strip()
             print("Invalid input. Please try again. \n")
 
 while play_game:
-    start = input("Do you wish to enter the Labyrinth of Riddles? (yes/no) \n").lower().strip()
+    start = input("Do you wish to enter the Labyrinth of Riddles? (yes/no) \n")\
+        .lower().strip()
     if start == "yes" or start == "y":
         print("\nLet it begin! \n")
         begin_labyrinth()
