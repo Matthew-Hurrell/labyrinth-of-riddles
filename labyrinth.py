@@ -240,7 +240,7 @@ You have found the treasure of the labyrinth of riddles!
 
 You make your way towards the treasure. 
 
-A figuresteps out from behind it.
+A figure steps out from behind it.
 
 "Here we are adventurer. I knew from the first moment I saw you that
 we would end up here." The Riddler says.
