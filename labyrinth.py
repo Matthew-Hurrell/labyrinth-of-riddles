@@ -156,6 +156,18 @@ to open."
 "Now ask us... and make your choice."
 """
     print(path_four)
+    while play_game:
+        choice = input("Choose door or ask question? (door/ask) \n").lower().strip()
+        if choice == "door" or choice == "d":
+            choice = input("Which door do you choose? (right/left) \n").lower().strip()
+            if choice == "right" or choice == "r":
+                right_door()
+                break
+            elif choice == "left" or choice == "l":
+                fourth_riddle()
+                break
+            else:
+                print("Invalid input. Please try again. \n")
 
 def third_riddle():
     riddle_three = riddle[2]["riddle"]
@@ -226,17 +238,10 @@ and turns left again. The end of the path is hidden.
 """
     print(path_three)
     while play_game:
-        choice = input("Choose door or ask question? (door/ask) \n").lower().strip()
-        if choice == "door" or choice == "d":
-            choice = input("Which door do you choose? (right/left) \n").lower().strip()
-            if choice == "right" or choice == "r":
-                right_door()
-                break
-            elif choice == "left" or choice == "l":
-                fourth_riddle()
-                break
-            else:
-                print("Invalid input. Please try again. \n")
+        choice = input("Which path do you take? (left/right/forward) \n").lower().strip()
+        if choice == "left" or choice == "l":
+            third_riddle()
+            break
         elif choice == "right" or choice == "r":
             right = """
 --------------------------------------------------------------
