@@ -29,7 +29,7 @@ Welcome to the Labyrinth of Riddles.
 Only the truly worthy can succeed in completing the Labyrinth.
 
 Navigate the maze and answer the riddles correctly to prove yourself
-worthy.
+worthy of claiming the legendary treasure within its walls.
 
 But beware! Many brave explorers who venture into the labyrinth never return.
 """
@@ -37,8 +37,185 @@ print(intro_paragraph)
 
 play_game = True
 
-def sixth_chapter():
-    print("sixth chapter")
+def take_treasure(): 
+    bad_ending = """
+--------------------------------------------------------------
+
+The treasure is yours! You have earnt it. Why shouldn't you take it?
+
+You walk towards the treasure and see it gleaming before you.
+
+You see a large diamond resting on the pile of treasure.
+
+You reach out your hand to touch it.
+
+As soon as your finger connects with the diamond you feel a strange feeling 
+instantly wash over you.
+
+Your skin is tingling with static. 
+
+You look down and see your skin begin to glow with a faint light.
+
+The light increases. You rub your eyes and then shake your hands but the
+light continues to get brighter.
+
+Is this an illusion? What is this magic?
+
+You take a step backwards. What is happening?
+
+You hear a sound behind you. The empty cloak on the floor begins to vibrate.
+
+"Oh please god no.." You think to yourself.
+
+You look at the door at the end of the hall and run towards the door in desperation.
+
+You are almost there. 
+
+As your fingers touch the door handle you feel the fabric of the cloak as it wraps tightly
+around you. Stopping you in your tracks.
+
+You madly grab for the door but feel yourself being pulled away as the cloak pulls you
+in and covers you.
+
+Helpless to escape, you feel the hood of the cloak slowly rise over the back of your
+head and over your face.
+
+"Beware the curse of greed." 
+
+The Riddlers words ring in your ears as everything fades to black.
+
+You are now the Riddler. The labyrinth has you now.
+
+You will remain trapped in the labyrinth until another adventurer solves
+your riddles and proves themselves worthy.
+
+GAME OVER.
+"""
+    print(bad_ending)
+    while play_game:
+        start = input("Do you wish to play again? (yes/no) \n").lower().strip()
+        if start == "yes" or start == "y":
+            print("\nLet it begin! \n")
+            begin_labyrinth()
+            break
+        elif start == "no" or start == "n":
+            quit()
+        else:
+            print("Invalid input. Please try again. \n")
+
+def leave():
+    good_ending = """
+--------------------------------------------------------------
+
+"Beware the curse of greed."
+
+You decide to heed the Riddlers words of warning and avoid the treasure.
+
+You sigh and put your hand over your eyes as you walk past the staggering
+piles of gold.
+
+You get to the door and put your hand on the handle. You look
+back one last time at the labyrinth before you turn the handle
+and walk through the doorway into the bright light beyond.
+
+CONGRATULATIONS ADVENTURER. You completed the labyrinth of riddles! 
+
+You have been blessed with one year of good fortune. Go forth and conquer!
+"""
+    print(good_ending)
+    while play_game:
+        start = input("Do you wish to play again? (yes/no) \n").lower().strip()
+        if start == "yes" or start == "y":
+            print("\nLet it begin! \n")
+            begin_labyrinth()
+            break
+        elif start == "no" or start == "n":
+            quit()
+        else:
+            print("Invalid input. Please try again. \n")
+
+def end():
+    end_paragraph = """
+--------------------------------------------------------------
+
+"CORRECT!" Shouts the Riddler.
+
+"You have done it!" 
+
+"You have solved all my riddles and freed me from this labyrinth!"
+
+"I am no longer bound to this place as it's servant!"
+
+The Riddler shakes and light bursts out from under the dark cloak.
+
+The Riddler stretches out and rises into the air as light continues to 
+shoot from the cloak.
+
+"The treasure is yours! But this treasure comes at a price."
+
+"Beware the curse of greed!"
+
+The hood falls backwards and for a split second you see the quick smile
+on the figures face before they burst into a blinding flash of light.
+
+You cover your eyes and fall backwards.
+
+There is silence.
+
+You slowly open your eyes to see that the figure is gone and all that remains
+is a smoking black cloak on the floor.
+
+The Riddler is gone. You have completed the Labyrinth of Riddles!
+
+One more choice lays before you.
+    """
+    print(end_paragraph)
+    while play_game:
+        choice = input("Do you take the treasure or leave without it? (take/leave) \n").lower().strip()
+        if choice == "take" or choice == "t":
+            take_treasure()
+            break
+        elif choice == "leave" or choice == "l":
+            leave()
+            break
+        else:
+            print("Invalid input. Please try again. \n")
+
+
+def sixth_riddle():
+    riddle_six = riddle[5]["riddle"]
+    riddle_six_answer = riddle[5]["correct"]
+    path_six = """
+--------------------------------------------------------------
+
+"Very good. Correct again. You are a true mastermind."
+
+"This is your final challenge. Your final riddle."
+
+"I have saved the best for last."
+
+"Do not disappoint me."
+
+"Riddle me this."
+    """
+    print(path_six)
+    for char in riddle_six:
+        sleep(0.05)
+        sys.stdout.write(char)
+        sys.stdout.flush()
+    guesses = 3
+    while play_game:
+        print(f"\nYou have {guesses} guesses left. \n")
+        choice = input("What is your guess? \n").lower().strip()
+        if choice == riddle_six_answer:
+            end()
+            break
+        else:
+            print('\n"You guessed incorrectly. Try again"')
+            guesses -= 1
+            if guesses == 0:
+                you_die()
+                break
 
 def fifth_riddle():
     riddle_five = riddle[4]["riddle"]
@@ -46,23 +223,33 @@ def fifth_riddle():
     path_five = """
 --------------------------------------------------------------
 
-You walk up to the left door and open it slowly.
+You take the right path and walk through into the open area.
 
-You peak around the edge of the door and see a pathway that
-turns right.
+The path opens up into a large dimly lit hall. 
 
-All seems to be normal. 
+You see a large door on the opposite side of the hall. This must be
+the labyrinth exit!
 
-You walk through the doorway and close the door behind you.
+In the centre of the hall you see a glimmer of gold. 
 
-You follow the path and turn right into a narrow passage. 
+Large piles of gold and treasure fill the centre of the room. 
 
-You are hit with another flash of bright light.
+They are piled high above head height. A truly incalculable value!
 
-The Riddler appears in the path infront of you.
+You have found the treasure of the labyrinth of riddles!
 
-"You may have been lucky solving my door riddle, but this time
-I'm not playing around. Let's really see what you're made of."
+You make your way towards the treasure. 
+
+A figuresteps out from behind it.
+
+"Here we are adventurer. I knew from the first moment I saw you that
+we would end up here." The Riddler says.
+
+"I have two last riddles for you. If you can guess them both then you
+have truly bested me. The treasure will be yours and I will finally be
+free of this place."
+
+"It's time for your final challenge."
 
 The Riddler points at you.
 
@@ -77,8 +264,8 @@ The Riddler points at you.
     while play_game:
         print(f"\nYou have {guesses} guesses left. \n")
         choice = input("What is your guess? \n").lower().strip()
-        if choice == riddle_five_answer or choice == "the moon":
-            sixth_chapter()
+        if choice == riddle_five_answer or choice == "a tree":
+            sixth_riddle()
             break
         else:
             print('\n"You guessed incorrectly. Try again"')
