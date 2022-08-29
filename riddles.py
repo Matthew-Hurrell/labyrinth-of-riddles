@@ -26,11 +26,6 @@ blue; never empty, but sometimes full; never pushes, always pulls?"\n''',
         "correct": "moon"
     },
     {
-        "riddle": '''"I am a word of letters three; add two and fewer \
-there will be. What word am I?"\n''',
-        "correct": "few"
-    },
-    {
         "riddle": '''"Reaching stiffly for the sky, I bare my fingers \
 when it's cold. In warmth I wear an emerald glove and in between I \
 dress in gold. What am I?"\n''',

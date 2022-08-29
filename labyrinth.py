@@ -37,8 +37,146 @@ print(intro_paragraph)
 
 play_game = True
 
+def sixth_chapter():
+    print("sixth chapter")
+
+def fifth_riddle():
+    riddle_five = riddle[4]["riddle"]
+    riddle_five_answer = riddle[4]["correct"]
+    path_five = """
+--------------------------------------------------------------
+
+You walk up to the left door and open it slowly.
+
+You peak around the edge of the door and see a pathway that
+turns right.
+
+All seems to be normal. 
+
+You walk through the doorway and close the door behind you.
+
+You follow the path and turn right into a narrow passage. 
+
+You are hit with another flash of bright light.
+
+The Riddler appears in the path infront of you.
+
+"You may have been lucky solving my door riddle, but this time
+I'm not playing around. Let's really see what you're made of."
+
+The Riddler points at you.
+
+"Riddle me this."
+    """
+    print(path_five)
+    for char in riddle_five:
+        sleep(0.05)
+        sys.stdout.write(char)
+        sys.stdout.flush()
+    guesses = 3
+    while play_game:
+        print(f"\nYou have {guesses} guesses left. \n")
+        choice = input("What is your guess? \n").lower().strip()
+        if choice == riddle_five_answer or choice == "the moon":
+            sixth_chapter()
+            break
+        else:
+            print('\n"You guessed incorrectly. Try again"')
+            guesses -= 1
+            if guesses == 0:
+                you_die()
+                break
+
+
 def fifth_chapter():
-    print("fifth chapter")
+    fifth_paragraph = """
+--------------------------------------------------------------
+
+"Correct again!"    
+
+"You truly possess a formidable intellect. I will give you that."
+
+"But you have not beaten me yet!"
+
+"You are almost at the end of my labyrinth.. But the hardest part is yet 
+to come."
+
+"Until next time adventurer."
+
+The Riddler vanishes again in another flash of light.
+"""
+    print(fifth_paragraph)
+    path_five = """You look ahead and continue following the pathway
+in front of you.
+
+You are tired but push yourself forwards as you know you are close to the 
+end of the labyrinth.
+
+"It can't be much further." You tell yourself.
+
+You follow the passageway around to the right and then right again as
+the path turns around on itself.
+
+You then take a left and find youself at another fork in the road.
+
+There are two paths ahead. Left and right.
+
+The left path descends downwards steeply and turns a corner.
+
+The right path opens out what looks like a larger area beyond.
+"""
+    print(path_five)
+    while play_game:
+        choice = input("Which path will you choose? (left/right) \n").lower().strip()
+        if choice == "right" or choice == "r":
+            fifth_riddle()
+            break
+        elif choice == "left" or choice == "l":
+            left = """
+--------------------------------------------------------------
+
+You choose the left path and begin your slow descent down the passageway.
+
+You turn the corner and see that the passage continues down sharply.
+
+You are unable to see the bottom.
+
+Behind you you see a wall that looks slightly different from the other walls.
+
+The bricks are noticeably smaller than the normal bricks used for walls.
+
+You have a bad feeling, but you shrug it off and continue your descent.
+
+As you move down into the dark you hear a loud noise from the top of 
+the passage. 
+
+The strange wall at the peak of the pathway cracks and then splits open.
+
+The bricks crumble as a huge round boulder breaks through the wall and 
+rolls down the slope towards you, gaining momentum as it continues.
+
+You try to run but there is no escape.
+
+You close your eyes and cover your head as the boulder comes crashing
+down.
+
+It all goes black.
+
+GAME OVER.
+            """
+            print(left)
+            while play_game:
+                start = input("Do you wish to play again? (yes/no) \n").lower().strip()
+                if start == "yes" or start == "y":
+                    print("\nLet it begin! \n")
+                    begin_labyrinth()
+                    break
+                elif start == "no" or start == "n":
+                    quit()
+                else:
+                    print("Invalid input. Please try again. \n")
+        else:
+            print("Invalid input. Please try again. \n")
 
 def fourth_riddle():
     riddle_four = riddle[3]["riddle"]
@@ -156,14 +294,55 @@ to open."
 "Now ask us... and make your choice."
 """
     print(path_four)
+    available_questions = 1
     while play_game:
-        choice = input("Choose door or ask question? (door/ask) \n").lower().strip()
-        if choice == "door" or choice == "d":
+        if available_questions == 1:
+            choice = input("Choose door or ask question? (door/ask) \n").lower().strip()
+            if choice == "door" or choice == "d":
+                choice = input("Which door do you choose? (right/left) \n").lower().strip()
+                if choice == "right" or choice == "r":
+                    right_door()
+                    break
+                elif choice == "left" or choice == "l":
+                    fourth_riddle()
+                    break
+                else:
+                    print("Invalid input. Please try again. \n")
+            elif choice == "ask" or choice == "a":
+                which_question = """
+--------------------------------------------------------------
+
+Question A: Ask figure one - Which door leads to death?
+
+Question B: Ask figure two - Which door leads to death?
+
+Question C: Ask figure one - Which door would the other figure tell me 
+leads to death?
+
+Question D: Ask figure two - Which door would the other figure tell me 
+leads to death?
+"""
+                print(which_question)
+                available_questions -= 1
+                choice = input("Which question do you ask? (a/b/c/d) \n").lower().strip()
+                if choice == "a" or choice == "question a":
+                    print("\nThe left door leads to death.\n")
+                elif choice == "b" or choice == "question b":
+                    print("\nThe right door leads to death.\n")
+                elif choice == "c" or choice == "question c":
+                    print("\nThe other figure would say the left door leads to death.\n")
+                elif choice == "d" or choice == "question d":
+                    print("\nThe other figure would say the left door leads to death.\n")
+                else:
+                    print("Invalid input. Please try again. \n")
+            else:
+                print("Invalid input. Please try again. \n")
+        else:
             choice = input("Which door do you choose? (right/left) \n").lower().strip()
             if choice == "right" or choice == "r":
                 right_door()
                 break
-            elif choice == "left" or choice == "l":
+            elif choice == "left" or choice == "l":                    
                 fourth_riddle()
                 break
             else:
@@ -184,7 +363,7 @@ You see the top of the path infront of you.
 You are almost at the top when another flash of light forces
 you to close your eyes.
 
-When you reopen them you see the Riddler standing at the top
+When you re-open them you see the Riddler standing at the top
 of the slope.
 
 "What a surprise that you are still alive adventurer!"
@@ -258,23 +437,22 @@ You notice some small words carved into the stone wall.
 
 The words read: "The answer to the Riddlers next riddle is a six letter
 word beginning with S. You're welcome."
-
 """
             print(right)
             while play_game:
                 back = input("Do you want to return back to the last junction or exit the labyrinth? (back/exit) \n").lower().strip()
-                if back == "back" or start == "b":
-                    back = """
+                if back == "back" or back == "b":
+                    back_paragraph = """
 --------------------------------------------------------------
 
 You retrace your steps back to where you were.
                     """
-                    print(back)
+                    print(back_paragraph)
                     break
-                elif back == "exit" or start == "e":
+                elif back == "exit" or back == "e":
                     quit()
                 else:
-                    print("Invalid input. Please try again. \n")
+                    print("\nInvalid input. Please try again. \n")
         elif choice == "forward" or choice == "f":
             forward = """
 --------------------------------------------------------------            
