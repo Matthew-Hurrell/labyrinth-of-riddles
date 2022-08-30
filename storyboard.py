@@ -420,7 +420,7 @@ path_eight = """
     You follow the passageway around to the right and then right again as
     the path turns around on itself.
 
-    You then take a left and find youself at another fork in the road.
+    You then take a left and find yourself at another fork in the road.
 
     There are two paths ahead. Left and right.
 

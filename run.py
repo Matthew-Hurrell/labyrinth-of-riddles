@@ -88,21 +88,21 @@ def door_riddle():
                     choice = input("    Which question do you ask? (a/b/c/d) \
  \n    ").lower().strip()
                     if choice == "a" or choice == "question a":
-                        typewriter("\n    The left door leads to death.\n")
+                        typewriter('\n    "The left door leads to death."\n')
                         available_questions -= 1
                         break
                     elif choice == "b" or choice == "question b":
-                        typewriter("\n    The right door leads to death.\n")
+                        typewriter('\n    "The right door leads to death."\n')
                         available_questions -= 1
                         break
                     elif choice == "c" or choice == "question c":
-                        typewriter("\n    The other figure would say the left \
-door leads to death.\n")
+                        typewriter('\n    "The other figure would say the left \
+door leads to death."\n')
                         available_questions -= 1
                         break
                     elif choice == "d" or choice == "question d":
-                        typewriter("\n    The other figure would say the left \
-door leads to death.\n")
+                        typewriter('\n    "The other figure would say the left \
+door leads to death."\n')
                         available_questions -= 1
                         break
                     else:
