@@ -28,6 +28,7 @@ The stones are old and sticky to the touch.
 
 Before you are two paths. One path continues straight and the other follows 
 the outer ring of the labyrinth to the left.
+
 """
 
 left = """
@@ -39,12 +40,14 @@ You turn right at the end of the path and right again as it curves around
 onto itself.
 
 You have reached a dead end. 
+
 """
 
 back = """
 --------------------------------------------------------------
 
 You retrace your steps back to where you were.
+
 """
 
 path_one = """
@@ -64,6 +67,7 @@ The Ridder."
 The Riddler points at you.
 
 "Riddle me this."
+
 """
 
 final_words = """
@@ -78,6 +82,7 @@ The Ridder raises his hand.
 There is a bright flash and everything fades to black...
 
 GAME OVER.
+
 """
 
 second_left = """
@@ -103,6 +108,7 @@ towards your body.
 It all goes black.
 
 GAME OVER.
+
 """
 
 path_two = """Infront of you there are two pathways.
@@ -116,6 +122,7 @@ There is a small carving in the stone wall infront of you.
 You lean in to have a closer look.
 
 It reads "Whatever you do, don't go left."
+
 """
 
 second_paragraph = """
@@ -131,6 +138,7 @@ opponent?"
 
 There's a blinding flash of light. You shade your eyes and the Riddler
 vanishes from sight.
+
 """
 
 path_three = """
@@ -155,6 +163,7 @@ of you.
 The Riddler points at you.
 
 "Riddle me this."
+
 """
 
 forward = """
@@ -182,6 +191,7 @@ You hear running water beneath you.
 You hit the water and it all goes black.
 
 GAME OVER.
+
 """
 
 right = """
@@ -199,6 +209,7 @@ You notice some small words carved into the stone wall.
 
 The words read: "The answer to the Riddlers next riddle is a six letter
 word beginning with S. You're welcome."
+
 """
 
 path_four = """Infront of you there are three pathways.
@@ -211,6 +222,7 @@ disappears around a corner.
 
 There is also a steep path to your left which ascends upwards
 and turns left again. The end of the path is hidden.
+
 """
 
 third_paragraph = """
@@ -221,6 +233,7 @@ third_paragraph = """
 "I'm sure I'll see you again soon adventurer!"
 
 The Riddler vanishes again in another flash of light.
+
 """
 
 path_five = """
@@ -245,6 +258,7 @@ of the slope.
 The Riddler points at you.
 
 "Riddle me this."
+
 """
 
 which_question = """
@@ -259,6 +273,7 @@ leads to death?
 
 Question D: Ask figure two - Which door would the other figure tell me 
 leads to death?
+
 """
 
 path_six = """You finish climbing to the end of the slope.
@@ -282,6 +297,7 @@ to open."
 "But one of us always lies, the other always tells the truth."
 
 "Now ask us... and make your choice."
+
 """
 
 fourth_paragraph = """
@@ -294,6 +310,7 @@ fourth_paragraph = """
 "Until next time...."
 
 The Riddler vanishes again in another flash of light.
+
 """
 
 right_door_choice = """
@@ -315,6 +332,7 @@ wall infront of you.
 There is a blinding flash of light and it all goes dark.
 
 GAME OVER.
+
 """
 
 path_seven = """
@@ -341,6 +359,7 @@ I'm not playing around. Let's really see what you're made of."
 The Riddler points at you.
 
 "Riddle me this."
+
 """
 
 left_descent = """
@@ -374,6 +393,7 @@ down.
 It all goes black.
 
 GAME OVER.
+
 """
 
 path_eight = """You look ahead and continue following the pathway
@@ -394,6 +414,7 @@ There are two paths ahead. Left and right.
 The left path descends downwards steeply and turns a corner.
 
 The right path opens out what looks like a larger area beyond.
+
 """
 
 fifth_paragraph = """
@@ -411,6 +432,7 @@ to come."
 "Until next time adventurer."
 
 The Riddler vanishes again in another flash of light.
+
 """
 
 path_nine = """
@@ -447,6 +469,7 @@ free of this place."
 The Riddler points at you.
 
 "Riddle me this."
+
 """
 
 path_ten = """
@@ -461,6 +484,7 @@ path_ten = """
 "Do not disappoint me."
 
 "Riddle me this."
+
 """
 
 end_paragraph = """
@@ -496,6 +520,7 @@ is a smoking black cloak on the floor.
 The Riddler is gone. You have completed the Labyrinth of Riddles!
 
 One more choice lays before you.
+
 """
 
 good_ending = """
@@ -519,6 +544,7 @@ You completed the labyrinth of riddles!
 You have been blessed with one year of good fortune. 
 
 Go forth and conquer!
+
 """
 
 bad_ending = """
@@ -574,4 +600,5 @@ You will remain trapped in the labyrinth until another adventurer solves
 your riddles and proves themselves worthy.
 
 GAME OVER.
+
 """
