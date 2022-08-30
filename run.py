@@ -62,7 +62,7 @@ def riddle_me_this(riddle_question, riddle_answer, next_path, alt_answer):
                 you_die()
                 break
             else:
-                print('\n    "You guessed incorrectly. Try again"')
+                typewriter('\n    "You guessed incorrectly. Try again"')
 
 
 def door_riddle():
@@ -84,31 +84,34 @@ def door_riddle():
                     print("    Invalid input. Please try again. \n")
             elif choice == "ask" or choice == "a":
                 typewriter(which_question)
-                available_questions -= 1
-                choice = input("    Which question do you ask? (a/b/c/d) \n   \
- ").lower().strip()
                 while play_game:
+                    choice = input("    Which question do you ask? (a/b/c/d) \
+ \n    ").lower().strip()
                     if choice == "a" or choice == "question a":
                         typewriter("\n    The left door leads to death.\n")
+                        available_questions -= 1
                         break
                     elif choice == "b" or choice == "question b":
                         typewriter("\n    The right door leads to death.\n")
+                        available_questions -= 1
                         break
                     elif choice == "c" or choice == "question c":
                         typewriter("\n    The other figure would say the left \
 door leads to death.\n")
+                        available_questions -= 1
                         break
                     elif choice == "d" or choice == "question d":
                         typewriter("\n    The other figure would say the left \
 door leads to death.\n")
+                        available_questions -= 1
                         break
                     else:
                         print("    Invalid input. Please try again. \n")
             else:
                 print("    Invalid input. Please try again. \n")
         else:
-            choice = input("    Which door do you choose? (right/left) \n    \
-").lower().strip()
+            choice = input("\n    Which door do you choose? (right/left) \n  \
+  ").lower().strip()
             if choice == "right" or choice == "r":
                 right_door()
                 break

@@ -427,6 +427,7 @@ path_eight = """
     The left path descends downwards steeply and turns a corner.
 
     The right path opens out what looks like a larger area beyond.
+
 """
 
 fifth_paragraph = """
@@ -436,8 +437,9 @@ fifth_paragraph = """
 
     "But you have not beaten me yet!"
 
-    "You are almost at the end of my labyrinth.. But the hardest part
-    is yet to come."
+    "You are almost at the end of my labyrinth.."
+
+    "But the hardest part is yet to come."
 
     "Until next time adventurer."
 
@@ -487,7 +489,9 @@ path_nine = """
 """
 
 path_ten = """
-    "Very good. Correct again. You are a true mastermind."
+    "Very good. Correct again."
+
+    "You are a true mastermind."
 
     "This is your final challenge. Your final riddle."
 
@@ -531,7 +535,7 @@ end_paragraph = """
 
     You have completed the Labyrinth of Riddles!
 
-    One more choice lays before you.
+    You are faced with one final choice.
 
 """
 
