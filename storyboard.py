@@ -511,9 +511,13 @@ You get to the door and put your hand on the handle. You look
 back one last time at the labyrinth before you turn the handle
 and walk through the doorway into the bright light beyond.
 
-CONGRATULATIONS ADVENTURER. You completed the labyrinth of riddles! 
+CONGRATULATIONS ADVENTURER!! 
 
-You have been blessed with one year of good fortune. Go forth and conquer!
+You completed the labyrinth of riddles!
+
+You have been blessed with one year of good fortune. 
+
+Go forth and conquer!
 """
 
 bad_ending = """
