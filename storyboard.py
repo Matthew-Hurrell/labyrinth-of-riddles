@@ -18,17 +18,21 @@ first_paragraph = """
 
     You find yourself facing the doorway to the beginning of the Labyrinth.
 
-    There is not a single sound to be heard. Only the faint crackle of the
-    torches that light the dim walkways.
+    Not a single sound can be heard.
+
+    Only the faint crackle of the torches that light the dim walkways.
 
     You feel the gravel crunch beneath your feet as you take a breath
     and enter the labyrinth.
 
     The walls are thick stone bricks which extend up far beyond reach.
+
     The stones are old and sticky to the touch.
 
-    Before you are two paths. One path continues straight and the other
-    follows the outer ring of the labyrinth to the left.
+    Before you are two paths.
+
+    One path continues straight and the other follows the outer ring
+    of the labyrinth to the left.
 
 """
 
@@ -112,7 +116,10 @@ second_left = """
 
 """
 
-path_two = """  Infront of you there are two pathways.
+path_two = """
+    --------------------------------------------------------------
+
+    Infront of you there are two pathways.
 
     One path goes left, and the other goes right.
 
@@ -127,19 +134,19 @@ path_two = """  Infront of you there are two pathways.
 """
 
 second_paragraph = """
-    --------------------------------------------------------------
+    "You guessed correctly... I'm impressed."
 
-    "You guessed correctly... I'm impressed. It's been a thousand
-    years since someone solved one of my riddles. Maybe you will
-    finally be a worthy opponent?"
+    "It's been a thousand years since someone solved one of my riddles."
+
+    "Maybe you will finally be a worthy opponent?"
 
     "But don't get cocky. I always save my hardest riddles for last!"
 
     "I'll see you soon... if you survive."
 
-    There's a blinding flash of light. You shade your eyes and the Riddler
-    vanishes from sight.
+    There's a blinding flash of light.
 
+    You shade your eyes and the Riddler vanishes from sight.
 """
 
 path_three = """
@@ -213,7 +220,10 @@ right = """
 
 """
 
-path_four = """ Infront of you there are three pathways.
+path_four = """
+    --------------------------------------------------------------
+
+    Infront of you there are three pathways.
 
     There is a walkway that leads around to the right, the end of
     the path is visible and it looks like a dead end.
@@ -227,14 +237,11 @@ path_four = """ Infront of you there are three pathways.
 """
 
 third_paragraph = """
-    --------------------------------------------------------------
-
     "Very good! Another correct answer. This is getting interesting!"
 
     "I'm sure I'll see you again soon adventurer!"
 
     The Riddler vanishes again in another flash of light.
-
 """
 
 path_five = """
@@ -277,7 +284,10 @@ which_question = """
 
 """
 
-path_six = """  You finish climbing to the end of the slope.
+path_six = """
+    --------------------------------------------------------------
+
+    You finish climbing to the end of the slope.
 
     You see two dark figures infront of you.
 
@@ -288,8 +298,9 @@ path_six = """  You finish climbing to the end of the slope.
 
     "We are the guardians of the doors."
 
-    "One of these doors leads to the end sections of the labyrinth.
-    The other leads to death."
+    "One of these doors leads to the end sections of the labyrinth."
+
+    "The other leads to death."
 
     "We know which door is which."
 
@@ -303,8 +314,6 @@ path_six = """  You finish climbing to the end of the slope.
 """
 
 fourth_paragraph = """
-    --------------------------------------------------------------
-
     "You've bested me again adventurer."
 
     "From now on I'm not going to be so easy on you."
@@ -312,7 +321,6 @@ fourth_paragraph = """
     "Until next time...."
 
     The Riddler vanishes again in another flash of light.
-
 """
 
 right_door_choice = """
@@ -399,8 +407,10 @@ left_descent = """
 
 """
 
-path_eight = """    You look ahead and continue following the pathway
-    in front of you.
+path_eight = """
+    --------------------------------------------------------------
+
+    You look ahead and continue following the pathway in front of you.
 
     You are tired but push yourself forwards as you know you are close to
     the end of the labyrinth.
@@ -417,12 +427,9 @@ path_eight = """    You look ahead and continue following the pathway
     The left path descends downwards steeply and turns a corner.
 
     The right path opens out what looks like a larger area beyond.
-
 """
 
 fifth_paragraph = """
-    --------------------------------------------------------------
-
     "Correct again!"
 
     "You truly possess a formidable intellect. I will give you that."
@@ -435,7 +442,6 @@ fifth_paragraph = """
     "Until next time adventurer."
 
     The Riddler vanishes again in another flash of light.
-
 """
 
 path_nine = """
@@ -445,8 +451,9 @@ path_nine = """
 
     The path opens up into a large dimly lit hall.
 
-    You see a large door on the opposite side of the hall. This must be
-    the labyrinth exit!
+    You see a large door on the opposite side of the hall.
+
+    That must be the labyrinth exit!
 
     In the centre of the hall you see a glimmer of gold.
 
@@ -460,12 +467,16 @@ path_nine = """
 
     A figure steps out from behind it.
 
-    "Here we are adventurer. I knew from the first moment I saw you that
-    we would end up here." The Riddler says.
+    "Here we are adventurer."
 
-    "I have two last riddles for you. If you can guess them both then you
-    have truly bested me. The treasure will be yours and I will finally be
-    free of this place."
+    "I knew from the first moment I saw you that we would end up here."
+    The Riddler says.
+
+    "I have two last riddles for you."
+
+    "If you can guess them both then you have truly bested me."
+
+    "The treasure will be yours and I will finally be free of this place."
 
     "It's time for your final challenge."
 
@@ -476,8 +487,6 @@ path_nine = """
 """
 
 path_ten = """
-    --------------------------------------------------------------
-
     "Very good. Correct again. You are a true mastermind."
 
     "This is your final challenge. Your final riddle."
@@ -491,8 +500,6 @@ path_ten = """
 """
 
 end_paragraph = """
-    --------------------------------------------------------------
-
     "CORRECT!" Shouts the Riddler.
 
     "You have done it!"
@@ -520,7 +527,9 @@ end_paragraph = """
     You slowly open your eyes to see that the figure is gone and all that
     remains is a smoking black cloak on the floor.
 
-    The Riddler is gone. You have completed the Labyrinth of Riddles!
+    The Riddler is gone.
+
+    You have completed the Labyrinth of Riddles!
 
     One more choice lays before you.
 
@@ -553,7 +562,11 @@ good_ending = """
 bad_ending = """
     --------------------------------------------------------------
 
-    The treasure is yours! You have earnt it. Why shouldn't you take it?
+    The treasure is yours!
+
+    You have earnt it.
+
+    Why shouldn't you take it?
 
     You walk towards the treasure and see it gleaming before you.
 
@@ -561,22 +574,29 @@ bad_ending = """
 
     You reach out your hand to touch it.
 
-    As soon as your finger connects with the diamond you feel a strange 
-    feeling instantly wash over you.
+    As soon as your finger connects with the diamond you feel a strange
+    sensation instantly wash over you.
 
     Your skin is tingling with static.
 
     You look down and see your skin begin to glow with a faint light.
 
-    The light increases. You rub your eyes and then shake your hands but the
-    light continues to get brighter.
+    The light increases.
 
-    Is this an illusion? What is this magic?
+    You rub your eyes and then shake your hands but the light continues
+    to get brighter.
 
-    You take a step backwards. What is happening?
+    Is this an illusion?
 
-    You hear a sound behind you. The empty cloak on the floor begins to 
-    vibrate.
+    What is this magic?
+
+    You take a step backwards.
+
+    What is happening?
+
+    You hear a sound behind you.
+
+    The empty cloak on the floor begins to vibrate.
 
     "Oh please god no.." You think to yourself.
 
@@ -585,8 +605,8 @@ bad_ending = """
 
     You are almost there.
 
-    As your fingers touch the door handle you feel the fabric of the cloak 
-    as it wraps tightly around you. Stopping you in your tracks.
+    As your fingers touch the door handle you feel the fabric of the cloak
+    as it wraps tightly around you, stopping you in your tracks.
 
     You madly grab for the door but feel yourself being pulled away as the
     cloak pulls you in and covers you.
@@ -598,7 +618,9 @@ bad_ending = """
 
     The Riddlers words ring in your ears as everything fades to black.
 
-    You are now the Riddler. The labyrinth has you now.
+    You are now the Riddler.
+
+    The labyrinth has you now.
 
     You will remain trapped in the labyrinth until another adventurer solves
     your riddles and proves themselves worthy.

@@ -18,7 +18,7 @@ typewriter(intro_paragraph)
 def play_again():
     while play_game:
         start = input("    Do you wish to play again? (yes/no) \n    ")\
-            .lower().strip()
+.lower().strip()
         if start == "yes" or start == "y":
             typewriter("\n    Let it begin! \n")
             begin_labyrinth()
@@ -62,7 +62,7 @@ def riddle_me_this(riddle_question, riddle_answer, next_path, alt_answer):
                 you_die()
                 break
             else:
-                typewriter('\n    "You guessed incorrectly. Try again"')
+                print('\n    "You guessed incorrectly. Try again"')
 
 
 def door_riddle():
@@ -70,10 +70,10 @@ def door_riddle():
     while play_game:
         if available_questions == 1:
             choice = input("    Choose door or ask question? (door/ask) \n    \
-                ").lower().strip()
+").lower().strip()
             if choice == "door" or choice == "d":
                 choice = input("    Which door do you choose? (right/left) \n \
-                       ").lower().strip()
+   ").lower().strip()
                 if choice == "right" or choice == "r":
                     right_door()
                     break
@@ -83,27 +83,32 @@ def door_riddle():
                 else:
                     print("    Invalid input. Please try again. \n")
             elif choice == "ask" or choice == "a":
-                print(which_question)
+                typewriter(which_question)
                 available_questions -= 1
                 choice = input("    Which question do you ask? (a/b/c/d) \n   \
-                     ").lower().strip()
-                if choice == "a" or choice == "question a":
-                    typewriter("\n    The left door leads to death.\n")
-                elif choice == "b" or choice == "question b":
-                    typewriter("\n    The right door leads to death.\n")
-                elif choice == "c" or choice == "question c":
-                    typewriter("\n    The other figure would say the left door\
-                     leads to death.\n")
-                elif choice == "d" or choice == "question d":
-                    typewriter("\n    The other figure would say the left door\
-                         leads to death.\n")
-                else:
-                    print("    Invalid input. Please try again. \n")
+ ").lower().strip()
+                while play_game:
+                    if choice == "a" or choice == "question a":
+                        typewriter("\n    The left door leads to death.\n")
+                        break
+                    elif choice == "b" or choice == "question b":
+                        typewriter("\n    The right door leads to death.\n")
+                        break
+                    elif choice == "c" or choice == "question c":
+                        typewriter("\n    The other figure would say the left \
+door leads to death.\n")
+                        break
+                    elif choice == "d" or choice == "question d":
+                        typewriter("\n    The other figure would say the left \
+door leads to death.\n")
+                        break
+                    else:
+                        print("    Invalid input. Please try again. \n")
             else:
                 print("    Invalid input. Please try again. \n")
         else:
             choice = input("    Which door do you choose? (right/left) \n    \
-                ").lower().strip()
+").lower().strip()
             if choice == "right" or choice == "r":
                 right_door()
                 break
@@ -155,11 +160,11 @@ def fifth_riddle():
 
 
 def fifth_chapter():
-    print(fifth_paragraph)
-    print(path_eight)
+    typewriter(fifth_paragraph)
+    typewriter(path_eight)
     while play_game:
         choice = input("    Which path will you choose? (left/right) \n    ")\
-            .lower().strip()
+.lower().strip()
         if choice == "right" or choice == "r":
             fifth_riddle()
             break
@@ -199,7 +204,7 @@ def third_chapter():
     typewriter(path_four)
     while play_game:
         choice = input("    Which path do you take? (left/right/forward) \n   \
-             ").lower().strip()
+ ").lower().strip()
         if choice == "left" or choice == "l":
             third_riddle()
             break
@@ -225,7 +230,7 @@ def second_chapter():
     typewriter(path_two)
     while play_game:
         choice = input("    Which path will you choose? (left/right) \n    ")\
-            .lower().strip()
+.lower().strip()
         if choice == "right" or choice == "r":
             second_riddle()
             break
@@ -259,7 +264,7 @@ def begin_labyrinth():
 
 while play_game:
     start = input("    Do you wish to enter the Labyrinth of Riddles? (yes/no)\
-        \n    ").lower().strip()
+\n    ").lower().strip()
     if start == "yes" or start == "y":
         typewriter("\n    Let it begin! \n")
         begin_labyrinth()
