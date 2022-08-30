@@ -8,7 +8,7 @@ play_game = True
 
 def typewriter(text):
     for char in text:
-        sleep(0.05)
+        sleep(0.04)
         sys.stdout.write(char)
         sys.stdout.flush()
 
