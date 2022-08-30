@@ -55,7 +55,8 @@ Suddenly a dark shadowy figure appears before you.
 
 The figure's face is obscured by a dark black cloak.
 
-The figure speaks in a quiet raspy voice: "I am the one they call... The Ridder."
+The figure speaks in a quiet raspy voice: "I am the one they call... 
+The Ridder."
 
 "If you cannot guess my riddle in three, you die."
 
@@ -95,8 +96,8 @@ of your feet touches a panel on the floor.
 "Ah crap, why did I go left?!"
 
 Before you have time to react, you hear the whip of hundreds of arrows
-as they are released from the holes in the walls and ceiling and whizz towards
-your body.
+as they are released from the holes in the walls and ceiling and whizz 
+towards your body.
 
 It all goes black.
 
@@ -544,18 +545,19 @@ You hear a sound behind you. The empty cloak on the floor begins to vibrate.
 
 "Oh please god no.." You think to yourself.
 
-You look at the door at the end of the hall and run towards the door in desperation.
+You look at the door at the end of the hall and run towards the door 
+in desperation.
 
 You are almost there. 
 
-As your fingers touch the door handle you feel the fabric of the cloak as it wraps tightly
-around you. Stopping you in your tracks.
+As your fingers touch the door handle you feel the fabric of the cloak as 
+it wraps tightly around you. Stopping you in your tracks.
 
-You madly grab for the door but feel yourself being pulled away as the cloak pulls you
-in and covers you.
+You madly grab for the door but feel yourself being pulled away as the 
+cloak pulls you in and covers you.
 
-Helpless to escape, you feel the hood of the cloak slowly rise over the back of your
-head and over your face.
+Helpless to escape, you feel the hood of the cloak slowly rise over the 
+back of your head and over your face.
 
 "Beware the curse of greed." 
 
