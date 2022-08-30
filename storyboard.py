@@ -44,7 +44,7 @@ left = """
 
 """
 
-back = """
+return_back = """
     --------------------------------------------------------------
 
     You retrace your steps back to where you were.
