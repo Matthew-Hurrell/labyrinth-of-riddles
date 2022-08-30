@@ -9,6 +9,7 @@ Navigate the maze and answer the riddles correctly to prove yourself
 worthy of claiming the legendary treasure within its walls.
 
 But beware! Many brave explorers who venture into the labyrinth never return.
+
 """
 
 first_paragraph = """

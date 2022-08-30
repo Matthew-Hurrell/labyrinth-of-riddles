@@ -4,11 +4,16 @@ from riddles import riddle
 from storyboard import *
 from title import title_art
 
-print(title_art)
-
-print(intro_paragraph)
-
 play_game = True
+
+def typewriter(text):
+    for char in text:
+        sleep(0.05)
+        sys.stdout.write(char)
+        sys.stdout.flush()
+
+print(title_art)
+typewriter(intro_paragraph)
 
 def play_again():
     while play_game:
