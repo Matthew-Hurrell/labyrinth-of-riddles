@@ -31,7 +31,7 @@ def play_again():
 def go_back():
     while play_game:
         back = input("    Do you want to return back to the last junction\
- or exit the labyrinth? (back/exit) \n    ").lower().strip()
+ or exit the labyrinth?\n    (back/exit) \n    ").lower().strip()
         if back == "back" or back == "b":
             typewriter(return_back)
             break
