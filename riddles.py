@@ -5,7 +5,7 @@ and an answer with the key of correct.
 Riddle questions also include escape sequences for bold and italic font
 styling which are printed to the terminal with the riddles.
 Riddle questions and answers are selected and set to variables for each
-riddle function and passed into the riddle me this function as arguments. 
+riddle function and passed into the riddle me this function as arguments.
 """
 
 riddle = [

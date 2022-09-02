@@ -12,6 +12,7 @@ from title import title_art
 # Variable for function loops
 play_game = True
 
+
 def typewriter(text):
     """
     Function for typewriter terminal effect.
@@ -27,6 +28,7 @@ print(title_art)
 
 # Prints intro paragraph to terminal
 typewriter(intro_paragraph)
+
 
 def play_again():
     """
@@ -51,6 +53,7 @@ def play_again():
         else:
             print("    Invalid input. Please try again. \n")
 
+
 def exit():
     """
     Exit function.
@@ -58,7 +61,7 @@ def exit():
     Features a while loop which prompts the user to confirm their
     decision to exit the program.
     Confirming the exit displays a short exit message and exits the program.
-    Declining the exit breaks out of the loop and returns the user to the 
+    Declining the exit breaks out of the loop and returns the user to the
     previous loop.
     The loop continues until a valid input is received from the user.
     The user input is converted into lowercase and stripped of all
@@ -73,8 +76,9 @@ def exit():
         elif sure == "no" or sure == "n":
             print("")
             break
-        else: 
+        else:
             print("\n    Invalid input. Please try again. \n")
+
 
 def go_back():
     """
@@ -99,6 +103,7 @@ def go_back():
         else:
             print("\n    Invalid input. Please try again. \n")
 
+
 def you_die():
     """
     Character death function.
@@ -108,6 +113,7 @@ def you_die():
     """
     typewriter(final_words)
     play_again()
+
 
 def riddle_me_this(riddle_question, riddle_answer, next_path, alt_answer):
     """
@@ -164,7 +170,7 @@ def door_riddle():
     to one. If it is the user is asked whether they want to exit, choose a
     door or ask a question.
     Right door calls the right door function which ends in a death.
-    Left door moves the user forward into the next chapter and calls the 
+    Left door moves the user forward into the next chapter and calls the
     fourth riddle function.
     A user can also exit the program and the exit function is called.
     The loop continues until a valid input is received from the user.
@@ -172,9 +178,9 @@ def door_riddle():
     surrounding whitespace before it is processed.
     If ask a question is selected another nested while loop is defined and
     the user chooses one question out of four options to ask.
-    Each question choice prints an answer to the terminal, then reduces the 
+    Each question choice prints an answer to the terminal, then reduces the
     available question variable by one and breaks out of the nested loop into
-    the outer loop. The outer loop then tests the available questions 
+    the outer loop. The outer loop then tests the available questions
     variable and sends the user to another loop which just features a choice
     on which door without the option to ask a question.
     """
@@ -229,7 +235,7 @@ def door_riddle():
             if choice == "right" or choice == "r":
                 right_door()
                 break
-            elif choice == "left" or choice == "l":                   
+            elif choice == "left" or choice == "l":
                 fourth_riddle()
                 break
             elif choice == "exit" or choice == "e":
@@ -238,26 +244,28 @@ def door_riddle():
                 print("    Invalid input. Please try again. \n")
 
 
-def take_treasure(): 
+def take_treasure():
     """
     Take treasure function.
     Called when the user opts to take the treasure at the end of the program.
-    Displays the bad ending text from the storyboard module and calls the 
+    Displays the bad ending text from the storyboard module and calls the
     play again function.
     """
     typewriter(bad_ending)
     play_again()
+
 
 def leave():
     """
     Leave function.
     Called when the user opts to leave the treasure and exit the labyrinth
     at the end of the program.
-    Displays the good ending text from the storyboard module and calls the 
+    Displays the good ending text from the storyboard module and calls the
     play again function.
     """
     typewriter(good_ending)
     play_again()
+
 
 def end():
     """
@@ -296,9 +304,9 @@ def sixth_riddle():
     Prints path ten from the storyboard module.
     Sets variables to riddle question and riddle answer to the sixth riddle
     in the riddles list of dictionaries.
-    Sets the variables for the next path to call the end function and the 
+    Sets the variables for the next path to call the end function and the
     alternative answer to the string "naught".
-    Calls riddle me this function and passes the variables declared into 
+    Calls riddle me this function and passes the variables declared into
     the function arguments.
     """
     typewriter(path_ten)
@@ -308,6 +316,7 @@ def sixth_riddle():
     alt_answer = "naught"
     riddle_me_this(riddle_question, riddle_answer, next_path, alt_answer)
 
+
 def fifth_riddle():
     """
     Fifth riddle function.
@@ -315,9 +324,9 @@ def fifth_riddle():
     Prints path nine from the storyboard module.
     Sets variables to riddle question and riddle answer to the fifth riddle
     in the riddles list of dictionaries.
-    Sets the variables for the next path to call the end function and the 
+    Sets the variables for the next path to call the end function and the
     alternative answer to the string "a tree".
-    Calls riddle me this function and passes the variables declared into 
+    Calls riddle me this function and passes the variables declared into
     the function arguments.
     """
     typewriter(path_nine)
@@ -359,6 +368,7 @@ def fifth_chapter():
         else:
             print("    Invalid input. Please try again. \n")
 
+
 def fourth_riddle():
     """
     Fourth riddle function.
@@ -369,7 +379,7 @@ def fourth_riddle():
     in the riddles list of dictionaries.
     Sets the variables for the next path to call the fifth chapter function
     and the alternative answer to the string "the moon".
-    Calls riddle me this function and passes the variables declared into 
+    Calls riddle me this function and passes the variables declared into
     the function arguments.
     """
     riddle_question = riddle[3]["riddle"]
@@ -378,6 +388,7 @@ def fourth_riddle():
     alt_answer = "the moon"
     typewriter(path_seven)
     riddle_me_this(riddle_question, riddle_answer, next_path, alt_answer)
+
 
 def right_door():
     """
@@ -389,6 +400,7 @@ def right_door():
     """
     typewriter(right_door_choice)
     play_again()
+
 
 def fourth_chapter():
     """
@@ -402,6 +414,7 @@ def fourth_chapter():
     typewriter(path_six)
     door_riddle()
 
+
 def third_riddle():
     """
     Third riddle function.
@@ -412,7 +425,7 @@ def third_riddle():
     in the riddles list of dictionaries.
     Sets the variables for the next path to call the fourth chapter function
     and the alternative answer to the string "a spider".
-    Calls riddle me this function and passes the variables declared into 
+    Calls riddle me this function and passes the variables declared into
     the function arguments.
     """
     riddle_question = riddle[2]["riddle"]
@@ -421,6 +434,7 @@ def third_riddle():
     alt_answer = "a spider"
     typewriter(path_five)
     riddle_me_this(riddle_question, riddle_answer, next_path, alt_answer)
+
 
 def third_chapter():
     """
@@ -436,7 +450,7 @@ def third_chapter():
     Left calls the third riddle function and breaks out of the loop.
     Right prints the right variable from the storyboard module and calls
     the go back function.
-    Forward prints the forward variable from the storyboard module and 
+    Forward prints the forward variable from the storyboard module and
     calls the play again function.
     Exit calls the exit function.
     """
@@ -459,6 +473,7 @@ def third_chapter():
         else:
             print("    Invalid input. Please try again. \n")
 
+
 def second_riddle():
     """
     Second riddle function.
@@ -469,7 +484,7 @@ def second_riddle():
     in the riddles list of dictionaries.
     Sets the variables for the next path to call the third chapter function
     and the alternative answer to the string "a castle".
-    Calls riddle me this function and passes the variables declared into 
+    Calls riddle me this function and passes the variables declared into
     the function arguments.
     """
     riddle_question = riddle[1]["riddle"]
@@ -478,6 +493,7 @@ def second_riddle():
     alt_answer = "a castle"
     typewriter(path_three)
     riddle_me_this(riddle_question, riddle_answer, next_path, alt_answer)
+
 
 def second_chapter():
     """
@@ -511,6 +527,7 @@ def second_chapter():
         else:
             print("    Invalid input. Please try again. \n")
 
+
 def first_riddle():
     """
     First riddle function.
@@ -521,7 +538,7 @@ def first_riddle():
     in the riddles list of dictionaries.
     Sets the variables for the next path to call the second chapter function
     and the alternative answer to the string "a river".
-    Calls riddle me this function and passes the variables declared into 
+    Calls riddle me this function and passes the variables declared into
     the function arguments.
     """
     riddle_question = riddle[0]["riddle"]
@@ -530,11 +547,12 @@ def first_riddle():
     alt_answer = "a river"
     typewriter(path_one)
     riddle_me_this(riddle_question, riddle_answer, next_path, alt_answer)
-        
+
+
 def begin_labyrinth():
     """
     Begin labyrinth function.
-    Called when the user chooses to enter the labyrinth of riddles in the 
+    Called when the user chooses to enter the labyrinth of riddles in the
     first play game loop.
     Prints the first paragraph and path two variables from the storyboard
     module.
@@ -563,6 +581,7 @@ def begin_labyrinth():
         else:
             print("    Invalid input. Please try again. \n")
 
+
 while play_game:
     """
     Start game while loop.
@@ -570,7 +589,7 @@ while play_game:
     The user input is converted into lowercase and stripped of all
     surrounding whitespace before it is processed.
     Asks the user if they wish to enter the labyrinth of riddles.
-    Yes prints a small section of text to the terminal and calls the 
+    Yes prints a small section of text to the terminal and calls the
     begin labyrinth function. It also breaks out of the loop.
     No calls the quit function and exits the program.
     """
