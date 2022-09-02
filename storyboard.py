@@ -528,7 +528,7 @@ end_paragraph = """
 
     "Beware the curse of greed!"
 
-    The hood falls backwards and for a split second you see the quick smile
+    The hood falls backwards and for a split second you see a quick smile
     on the figures face before they burst into a blinding flash of light.
 
     You cover your eyes and fall backwards.

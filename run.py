@@ -66,7 +66,7 @@ def riddle_me_this(riddle_question, riddle_answer, next_path, alt_answer):
     guesses = 3
     while play_game:
         print(f"\n    You have {guesses} guess(es) left. \n")
-        print('    To exit the labyrinth type "exit" \n')
+        print('    To exit the labyrinth type "exit". \n')
         choice = input("    What is your guess? \n    ").lower().strip()
         if choice == riddle_answer or choice == alt_answer:
             next_path()
