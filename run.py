@@ -66,10 +66,13 @@ def riddle_me_this(riddle_question, riddle_answer, next_path, alt_answer):
     guesses = 3
     while play_game:
         print(f"\n    You have {guesses} guess(es) left. \n")
+        print('    To exit the labyrinth type "exit" \n')
         choice = input("    What is your guess? \n    ").lower().strip()
         if choice == riddle_answer or choice == alt_answer:
             next_path()
             break
+        elif choice == "exit" or choice == "e" or choice == '"exit"':
+            exit()
         else:
             guesses -= 1
             if guesses == 0:
@@ -83,8 +86,8 @@ def door_riddle():
     available_questions = 1
     while play_game:
         if available_questions == 1:
-            choice = input("    Choose door or ask question? (door/ask) \n    \
-").lower().strip()
+            choice = input("    Choose door or ask question? (door/ask/exit)\
+ \n    ").lower().strip()
             if choice == "door" or choice == "d":
                 choice = input("    Which door do you choose? (right/left) \n \
    ").lower().strip()
@@ -121,17 +124,21 @@ def door_riddle():
                         break
                     else:
                         print("    Invalid input. Please try again. \n")
+            elif choice == "exit" or choice == "e":
+                exit()
             else:
                 print("    Invalid input. Please try again. \n")
         else:
-            choice = input("\n    Which door do you choose? (right/left) \n  \
-  ").lower().strip()
+            choice = input("\n    Which door do you choose? (right/left/exit)\
+ \n    ").lower().strip()
             if choice == "right" or choice == "r":
                 right_door()
                 break
-            elif choice == "left" or choice == "l":                    
+            elif choice == "left" or choice == "l":                   
                 fourth_riddle()
                 break
+            elif choice == "exit" or choice == "e":
+                exit()
             else:
                 print("    Invalid input. Please try again. \n")
 
@@ -180,14 +187,16 @@ def fifth_chapter():
     typewriter(fifth_paragraph)
     typewriter(path_eight)
     while play_game:
-        choice = input("    Which path will you choose? (left/right) \n    \
-").lower().strip()
+        choice = input("    Which path will you choose? (left/right/exit) \n\
+    ").lower().strip()
         if choice == "right" or choice == "r":
             fifth_riddle()
             break
         elif choice == "left" or choice == "l":
             typewriter(left_descent)
             play_again()
+        elif choice == "exit" or choice == "e":
+            exit()
         else:
             print("    Invalid input. Please try again. \n")
 
@@ -220,8 +229,8 @@ def third_chapter():
     typewriter(third_paragraph)
     typewriter(path_four)
     while play_game:
-        choice = input("    Which path do you take? (left/right/forward) \n   \
- ").lower().strip()
+        choice = input("    Which path do you take? (left/right/forward/exit)\
+ \n    ").lower().strip()
         if choice == "left" or choice == "l":
             third_riddle()
             break
@@ -231,6 +240,8 @@ def third_chapter():
         elif choice == "forward" or choice == "f":
             typewriter(forward)
             play_again()
+        elif choice == "exit" or choice == "e":
+            exit()
         else:
             print("    Invalid input. Please try again. \n")
 
@@ -246,14 +257,16 @@ def second_chapter():
     typewriter(second_paragraph)
     typewriter(path_two)
     while play_game:
-        choice = input("    Which path will you choose? (left/right) \n    \
-").lower().strip()
+        choice = input("    Which path will you choose? (left/right/exit) \n\
+    ").lower().strip()
         if choice == "right" or choice == "r":
             second_riddle()
             break
         elif choice == "left" or choice == "l":
             typewriter(second_left)
             play_again()
+        elif choice == "exit" or choice == "e":
+            exit()
         else:
             print("    Invalid input. Please try again. \n")
 
@@ -268,14 +281,16 @@ def first_riddle():
 def begin_labyrinth():
     typewriter(first_paragraph)
     while play_game:
-        choice = input("    Which path will you choose? (forward/left) \n    \
-").lower().strip()
+        choice = input("    Which path will you choose? (forward/left/exit) \n\
+    ").lower().strip()
         if choice == "forward" or choice == "f":
             first_riddle()
             break
         elif choice == "left" or choice == "l":
             typewriter(left)
             go_back()
+        elif choice == "exit" or choice == "e":
+            exit()
         else:
             print("    Invalid input. Please try again. \n")
 
