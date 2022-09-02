@@ -55,6 +55,22 @@ Link to the live site - [The Labyrinth of Riddles](https://labyrinth-of-riddles.
 
 ## User Stories
 
+* As a user I want to be able to understand the purpose and intention of the program when it first starts.
+* As a user I want to be given the option to start or end the program with my first interaction.
+* As a user I want the program navigation to be intuitive and easy to understand.
+* As a user I want to be given the opportunity to exit the program frequently and easily.
+* As a user I want to be warned that I will lose my progress if I exit the program and be given the opportunity to go back if I change my mind.
+* As a user I want my input to be validated and error checked so I can re-enter my choice if it is invalid.
+* As a user I want the storyline and narrative to be coherent, engaging and well structured.
+* As a user I want the text to be well laid out and easy to read.
+* As a user I want the puzzles and riddles to be challenging but well balanced.
+* As a user I want to have three guesses at each riddle before losing the game.
+* As a user I want a change in typography to help me differentiate between normal text and important sections.
+* As a user to be given the option to play again if I win or lose.
+* As a user I want different endings and outcomes based on my choices.
+* As a user I want to be able to go back to a previous junction if I face a dead end in the labyrinth.
+* As a user I want to be presented with multiple choices throughout the game that allow me to choose my own path.
+
 [Back to top](<#contents>)
 
 ## Structure 
