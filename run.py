@@ -24,9 +24,23 @@ def play_again():
             begin_labyrinth()
             break
         elif start == "no" or start == "n":
+            typewriter(exit_labyrinth)
             quit()
         else:
             print("    Invalid input. Please try again. \n")
+
+def exit():
+    while play_game:
+        sure = input("\n    Are you sure you wish to exit? Progress\
+ will be lost. (yes/no)\n    ").lower().strip()
+        if sure == "yes" or sure == "y":
+            typewriter(exit_labyrinth)
+            quit()
+        elif sure == "no" or sure == "n":
+            print("")
+            break
+        else: 
+            print("\n    Invalid input. Please try again. \n")
 
 def go_back():
     while play_game:
@@ -36,7 +50,7 @@ def go_back():
             typewriter(return_back)
             break
         elif back == "exit" or back == "e":
-            quit()
+            exit()
         else:
             print("\n    Invalid input. Please try again. \n")
 
@@ -276,4 +290,3 @@ while play_game:
         quit()
     else:
         print("    Invalid input. Please try again. \n")
-
