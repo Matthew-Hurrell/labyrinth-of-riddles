@@ -17,8 +17,8 @@ typewriter(intro_paragraph)
 
 def play_again():
     while play_game:
-        start = input("    Do you wish to play again? (yes/no) \n    ")\
-.lower().strip()
+        start = input("    Do you wish to play again? (yes/no) \n    \
+").lower().strip()
         if start == "yes" or start == "y":
             typewriter("\n    Let it begin! \n")
             begin_labyrinth()
@@ -110,13 +110,13 @@ def door_riddle():
                         available_questions -= 1
                         break
                     elif choice == "c" or choice == "question c":
-                        typewriter('\n    "The other figure would say the left \
-door leads to death."\n')
+                        typewriter('\n    "The other figure would say the left\
+ door leads to death."\n')
                         available_questions -= 1
                         break
                     elif choice == "d" or choice == "question d":
-                        typewriter('\n    "The other figure would say the left \
-door leads to death."\n')
+                        typewriter('\n    "The other figure would say the left\
+ door leads to death."\n')
                         available_questions -= 1
                         break
                     else:
@@ -180,8 +180,8 @@ def fifth_chapter():
     typewriter(fifth_paragraph)
     typewriter(path_eight)
     while play_game:
-        choice = input("    Which path will you choose? (left/right) \n    ")\
-.lower().strip()
+        choice = input("    Which path will you choose? (left/right) \n    \
+").lower().strip()
         if choice == "right" or choice == "r":
             fifth_riddle()
             break
@@ -246,8 +246,8 @@ def second_chapter():
     typewriter(second_paragraph)
     typewriter(path_two)
     while play_game:
-        choice = input("    Which path will you choose? (left/right) \n    ")\
-.lower().strip()
+        choice = input("    Which path will you choose? (left/right) \n    \
+").lower().strip()
         if choice == "right" or choice == "r":
             second_riddle()
             break
