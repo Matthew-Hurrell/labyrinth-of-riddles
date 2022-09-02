@@ -1,3 +1,12 @@
+"""
+Storyboard variables for large text elements.
+Large text elements are saved into the storyboard module to avoid clutter
+in the run.py file.
+Storyboard variables are printed to the terminal from the run.py file 
+functions.
+"""
+
+
 intro_paragraph = """
     Greetings adventurer!
 
