@@ -197,7 +197,7 @@ The door riddle function is a larger function which features multiple nested if/
 
 ### Play Again Function
 
-The play again function is defined on the run.py module. It is called when a player character dies or runs out of guesses on a riddle. The purpose of this function is to give the user an option to restart the game or quit the program. The function features a while loop which displays the question to the user of whether they would like to play again or not. The while loop contains an if/elif/else statement which checks the users input and either calls the begin_labyrinth function and breaks out of the loop, prints a goodbye message and calls the quit function or displays an invalid input message and repeats the loop. The loop repeats until a valid input is received from the user.
+The play again function is defined on the run.py module. It is called when a player character dies or when the you_die function is called after failing a riddle challenge. The purpose of this function is to give the user an option to restart the game or quit the program. The function features a while loop which displays the question to the user of whether they would like to play again or not. The while loop contains an if/elif/else statement which checks the users input and either calls the begin_labyrinth function and breaks out of the loop, prints a goodbye message and calls the quit function or displays an invalid input message and repeats the loop. The loop repeats until a valid input is received from the user.
 
 ![Play Again Function](readme-images/play-again-function.png)
 
@@ -227,6 +227,8 @@ The go back function is called when a user reaches a dead end in the labyrinth. 
 
 ### You Die Function
 
+The you die function is called when a user runs out of guesses in the riddle challenges. The function prints the storyboard variable final_words using the typewriter effect to the terminal and then calls the play_again function to give the user the option to play again from the beginning. 
+
 ![You Die Function](readme-images/you-die-function.png)
 
 ![You Die Terminal Display](readme-images/you-die-terminal.png)
@@ -234,6 +236,8 @@ The go back function is called when a user reaches a dead end in the labyrinth. 
 [Back to top](<#contents>)
 
 ### End Function
+
+The end function is called when the user answers the final riddle correctly. The purpose of the end function is to print the final storyboard paragraph and give the user their final choice before concluding the game. This function also features a while loop with a nested if/elif/else statement. The user is given the option to take or leave the treasure. Taking the treasure calls the take_treasure function and breaks out of the loop. Leaving the treasure calls the leave function and breaks out of the loop. If the user input is invalid a please try again statement is printed to the terminal and the loop repeats. 
 
 ![End Function](readme-images/end-function.png)
 
@@ -243,7 +247,9 @@ The go back function is called when a user reaches a dead end in the labyrinth. 
 
 ### Multiple Endings
 
-![Endings Function](readme-images/ending-functions.png)
+There are two possible endings at the end of the program after the end function is called. These endings are defined using the functions of take_treasure and leave. Both of these functions print their individual storyboard elements to the terminal using the typewriter effect and then call the play_again function to give the user the option to play again or quit the game/program. Multiple endings were added to enhance game replayability and the user overall experience. The endings also round off the narrative nicely and provide a nice moral to the story.
+
+![Ending Functions](readme-images/ending-functions.png)
 
 ![Take Treasure Terminal Display](readme-images/take-treasure-terminal.png)
 
