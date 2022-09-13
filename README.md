@@ -94,63 +94,127 @@ The Labyrinth of Riddles contains many features which help to enhance the users 
 
 ### Title
 
-
+![The Labyrinth of Riddles Title](readme-images/title.png)
 
 [Back to top](<#contents>)
 
 ### Storyboard
 
+![Storyboard.py file](readme-images/storyboard.png)
+
+![Storyboard Intro Paragraph](readme-images/storyboard-two.png)
+
+![Storyboard Path Choice](readme-images/storyboard-three.png)
+
 [Back to top](<#contents>)
 
 ### Riddles
+
+![Riddles.py list](readme-images/riddles.png)
+
+![Riddle Terminal Display](readme-images/riddle-two.png)
 
 [Back to top](<#contents>)
 
 ### Labyrinth Structure
 
+![Labyrinth Structure Image](readme-images/Labyrinth-structure.png)
+
 [Back to top](<#contents>)
 
 ### Typewriter Effect
+
+![Typewriter Function](readme-images/typewriter-function.png)
+
+![Calling The Typewriter Function](readme-images/typewriter.png)
+
+![Typewriter Terminal Display](readme-images/typewriter-terminal.png)
 
 [Back to top](<#contents>)
 
 ### Input Validation
 
+![Input Validation Function Example](readme-images/input-validation.png)
+
+![Input Validation Terminal Display](readme-images/input-validation-two.png)
+
 [Back to top](<#contents>)
 
 ### Chapter Functions
+
+![Chapter Function](readme-images/chapter-function.png)
+
+![Chapter Terminal Display](readme-images/chapter-terminal.png)
 
 [Back to top](<#contents>)
 
 ### Riddle Me This Function
 
+![Riddle Me This Function](readme-images/riddle-me-this-function.png)
+
+![Riddle Terminal Display](readme-images/riddle-two.png)
+
 [Back to top](<#contents>)
 
 ### Door Riddle Function
+
+![Door Riddle Function Part One](readme-images/door-riddle-one.png)
+
+![Door Riddle Function Part Two](readme-images/door-riddle-two.png)
+
+![Door Riddle Terminal Display Part One](readme-images/door-riddle-terminal.png)
+
+![Door Riddle Terminal Display Part Two](readme-images/door-riddle-terminal-two.png)
 
 [Back to top](<#contents>)
 
 ### Play Again Function
 
+![Play Again Function](readme-images/play-again-function.png)
+
+![Play Again Terminal Display](readme-images/play-again-terminal.png)
+
 [Back to top](<#contents>)
 
 ### Exit Function
+
+![Exit Function](readme-images/exit-function.png)
+
+![Exit Terminal Display](readme-images/exit-terminal.png)
 
 [Back to top](<#contents>)
 
 ### Go Back Function
 
+![Go Back Function](readme-images/go-back-function.png)
+
+![Go Back Terminal Display](readme-images/go-back-terminal.png)
+
 [Back to top](<#contents>)
 
 ### You Die Function
+
+![You Die Function](readme-images/you-die-function.png)
+
+![You Die Terminal Display](readme-images/you-die-terminal.png)
 
 [Back to top](<#contents>)
 
 ### End Function
 
+![End Function](readme-images/end-function.png)
+
+![End Terminal Display](readme-images/end-terminal.png)
+
 [Back to top](<#contents>)
 
 ### Multiple Endings
+
+![Endings Function](readme-images/ending-functions.png)
+
+![Take Treasure Terminal Display](readme-images/take-treasure-terminal.png)
+
+![Leave Terminal Display](readme-images/leave-terminal.png)
 
 [Back to top](<#contents>)
 
