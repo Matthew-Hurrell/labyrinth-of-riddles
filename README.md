@@ -197,6 +197,8 @@ The door riddle function is a larger function which features multiple nested if/
 
 ### Play Again Function
 
+The play again function is defined on the run.py module. It is called when a player character dies or runs out of guesses on a riddle. The purpose of this function is to give the user an option to restart the game or quit the program. The function features a while loop which displays the question to the user of whether they would like to play again or not. The while loop contains an if/elif/else statement which checks the users input and either calls the begin_labyrinth function and breaks out of the loop, prints a goodbye message and calls the quit function or displays an invalid input message and repeats the loop. The loop repeats until a valid input is received from the user.
+
 ![Play Again Function](readme-images/play-again-function.png)
 
 ![Play Again Terminal Display](readme-images/play-again-terminal.png)
@@ -205,13 +207,17 @@ The door riddle function is a larger function which features multiple nested if/
 
 ### Exit Function
 
+The exit function is called whenever a user enters the exit command into the terminal input. The purpose of this function is to provide the user with a visual reminder that they will lose their progress if they exit. The user is then given an opportunity to confirm their choice or return back to their previous position in the game. The function features a while loop with a nested if/elif/else statement. Confirming the exit will print a small goodbye message and quit the program. Invalid input will print a small invalid input message to the terminal and repeat the loop. If the user decides to return back the break statement is used to break out of the while loop and return to the previous function.
+
 ![Exit Function](readme-images/exit-function.png)
 
 ![Exit Terminal Display](readme-images/exit-terminal.png)
 
 [Back to top](<#contents>)
 
-### Go Back Function
+### Go Back 
+
+The go back function is called when a user reaches a dead end in the labyrinth. The purpose of this function is to give the user the choice to return back to their previous junction or exit the program/labyrinth. The function features a while loop with a nested if/elif/else statement. The user is asked whether they wish to return back or exit the labyrinth. Their input is processed and checked for a match against the two options and if no match is found an invalid input statement is printed to the terminal and the loop repeats until a valid user input is received. If the user chooses to go back, a small section of text is printed using the typewriter effect to the terminal and the loop is broken out of using the break statement. This returns the user to the previous function loop choice. If the user chooses to exit the program the exit function is called.
 
 ![Go Back Function](readme-images/go-back-function.png)
 
