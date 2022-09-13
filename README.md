@@ -33,6 +33,7 @@ Link to the live site - [The Labyrinth of Riddles](https://labyrinth-of-riddles.
         * [Exit Function](<#exit-function>) 
         * [Go Back Function](<#go-back-function>) 
         * [You Die Function](<#play-again-function>) 
+        * [End Function](<#end-function>) 
         * [Multiple Endings](<#multiple-endings>) 
     * [**Future Features**](<#future-features>)
 * [**Technologies Used**](<#technologies-used>)
@@ -87,9 +88,13 @@ Because The Labyrinth of Riddles is a terminal program, style and design options
 
 # Features
 
+The Labyrinth of Riddles contains many features which help to enhance the users overall experience. Back-end functionality and interactivity are integral to a positive user experience within the limitations of this terminal-based project.
+
 ## Existing Features
 
 ### Title
+
+
 
 [Back to top](<#contents>)
 
@@ -138,6 +143,10 @@ Because The Labyrinth of Riddles is a terminal program, style and design options
 [Back to top](<#contents>)
 
 ### You Die Function
+
+[Back to top](<#contents>)
+
+### End Function
 
 [Back to top](<#contents>)
 
