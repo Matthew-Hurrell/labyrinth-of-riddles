@@ -27,6 +27,7 @@ Link to the live site - [The Labyrinth of Riddles](https://labyrinth-of-riddles.
         * [Typewriter Effect](<#typewriter-effect>)
         * [Input Validation](<#input-validation>)
         * [Chapter Functions](<#chapter-functions>) 
+        * [Riddle Functions](<#riddle-functions>) 
         * [Riddle Me This Function](<#riddle-me-this-function>) 
         * [Door Riddle Function](<#door-riddle>)       
         * [Play Again Function](<#play-again-function>) 
@@ -154,13 +155,23 @@ Input validation is a very crucial element in the functionality of the Labyrinth
 
 ### Chapter Functions
 
+There are five chapter functions which are defined in the run.py module. The functions are normally called after a user makes a correct riddle choice. Chapter functions begin by using the typewriter effect to print one or more  variables from the storyboard module to the terminal. The user is then presented with a navigational choice which is a if/elif/else statement wrapped in a while loop. A valid user choice breaks the user out of the loop and calls the next function. The user is also given the option to exit the labyrinth/program at each navigational choice.
+
 ![Chapter Function](readme-images/chapter-function.png)
 
 ![Chapter Terminal Display](readme-images/chapter-terminal.png)
 
 [Back to top](<#contents>)
 
+### Riddle Functions
+
+![Riddle Functions](readme-images/riddle-functions.png)
+
+[Back to top](<#contents>)
+
 ### Riddle Me This Function
+
+The riddle me this function is the function used for each riddle section of the program. There are six different riddles that are passed into the function as the user progresses through the game. 
 
 ![Riddle Me This Function](readme-images/riddle-me-this-function.png)
 
