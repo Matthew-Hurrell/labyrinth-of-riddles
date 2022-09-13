@@ -247,7 +247,7 @@ The end function is called when the user answers the final riddle correctly. The
 
 ### Multiple Endings
 
-There are two possible endings at the end of the program after the end function is called. These endings are defined using the functions of take_treasure and leave. Both of these functions print their individual storyboard elements to the terminal using the typewriter effect and then call the play_again function to give the user the option to play again or quit the game/program. Multiple endings were added to enhance game replayability and the user overall experience. The endings also round off the narrative nicely and provide a nice moral to the story.
+There are two possible endings at the end of the program after the end function is called. These endings are defined using the functions of take_treasure and leave. Both of these functions print their individual storyboard elements to the terminal using the typewriter effect and then call the play_again function to give the user the option to play again or quit the game/program. Multiple endings were added to enhance game replayability and the user overall experience. The endings also round off the narrative nicely and provide a good moral to the story.
 
 ![Ending Functions](readme-images/ending-functions.png)
 
@@ -258,6 +258,16 @@ There are two possible endings at the end of the program after the end function 
 [Back to top](<#contents>)
 
 ## Future Features
+
+The Labyrinth of Riddles has many potential areas for future improvements/features.
+
+* The labyrinth navigational elements could be randomized in a list which is shuffled for each playthrough so the correct labyrinth path is different each time. This could help improve replayability with users. 
+* The trap locations and deaths could also be randomized to be triggered by different choices on each playthrough. This would also increase game difficulty on repeated playthroughs.  
+* More riddles could be added to the riddle list and these could also be shuffled to be different on each user playthrough.
+* The labyrinth could be extended to be larger with more choices and riddles. There could also be a new feature to allow a user to continue from a checkpoint using a code if their character dies or they exit the game.
+* More possible alternate endings could be added based on user choices. Game narrative could be developed to make earlier user choices drastically effect the final outcome.
+* The labyrinth could feature different settings for difficulty for less advanced users. Easier settings could reduce the size of the labyrinth and the difficulty of the riddles for novice or younger players.
+* A leaderboard section could be implemented where users enter their name upon completion of the labyrinth. This section could also record the number of deaths before completion and whether the user became a riddler or not.
 
 [Back to top](<#contents>)
 
