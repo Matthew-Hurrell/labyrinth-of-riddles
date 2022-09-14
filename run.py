@@ -17,6 +17,7 @@ def typewriter(text):
     """
     Function for typewriter terminal effect.
     Loops through text input and prints each character with slight delay.
+    Code acquired from Stack Overflow. Link in README.
     """
     for char in text:
         sleep(0.04)

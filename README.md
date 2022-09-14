@@ -273,27 +273,45 @@ The Labyrinth of Riddles has many potential areas for future improvements/featur
 
 # Technologies Used
 
-* Python
-* Heroku
-* [GitPod](https://gitpod.io/) - An open source developer platform for remote development. Used to edit and build the site
-* [GitHub](https://github.com/) - An online host for web and software development projects. Used to store the repository and deploy the finished website.
+* [Python](https://www.python.org/) - Python is a high level, general-purpose programming language. Used for all project functionality.
+* [Heroku](https://www.heroku.com) - Heroku is a platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud. Used to host the functioning application.
+* [GitPod](https://gitpod.io/) - An open source developer platform for remote development. Used to edit and build the program.
+* [GitHub](https://github.com/) - An online host for web and software development projects. Used to store the repository. Linked to Heroku for automatic deployement with new commits.
 * [Git](https://git-scm.com/) - Software for tracking changes to files. Used with GitPod to add, commit and push code changes to the repository on GitHub. 
-* [Apple Notes](https://www.icloud.com/notes) - A simple Apple app used to write and plan copy and content for the website.
+* [Apple Notes](https://www.icloud.com/notes) - A simple Apple app used to write and plan storyboard elements and content for the program.
 * [Slack](https://www.icloud.com/notes) - An online messaging program designed for workplace collaboration. Used for advice and guidance from peers and tutors. 
 
 [Back to top](<#contents>)
 
 # Testing
 
+The Labyrinth of Riddles has been tested extensively for bugs and errors throughout the development process.
+
 ## Validator Tests
+
+All the Python code for each module included in this project has been passed through the [PEP8 online python validator tester](http://pep8online.com/). No errors were shown.
+
+![Run.py Module Validator Test](readme-images/run-validator-test.png)
+
+![Riddles.py Module Validator Test](readme-images/riddles-validator-test.png)
+
+![Storyboard.py Module Validator Test](readme-images/storyboard-validator-test.png)
+
+![Title.py Module Validator Test](readme-images/title-validator-test.png)
 
 [Back to top](<#contents>)
 
 ## Terminal Tests
 
+The Labyrinth of Riddles program has been tested extensively in the local terminal on GitPod and through the code insitute Heroku terminal. No errors in layout or functionality were found.
+
+![Terminal Test](readme-images/terminal-test.png)
+
 [Back to top](<#contents>)
 
 ## Input Validation Tests
+
+The Labyrinth of Riddles program has been tested extensively to check for user input validation errors. All inputs have been tested for uppercase, lowercase and surrounding whitespace characters with no bugs or errors detected. All user data inputs are processed and evaluated logically and effectively. Invalid inputs are detected and processed accordingly for every user input.
 
 [Back to top](<#contents>)
 
@@ -301,9 +319,16 @@ The Labyrinth of Riddles has many potential areas for future improvements/featur
 
 ### Resolved 
 
+* In the early to mid stages of development all the large text elements, the riddles and the title were being run directly from the run.py module. This quickly became very unwieldy to organise because of the line character limit. The code became very difficult to read and edit. Consequently the title, storyboard text elements and riddles were all moved into their own python modules. These modules were then imported into the run.py module for use. This helped relieve some of messiness and clutter in the run.py module.
+* In the early stages of the project development there was no riddle me this function. Each riddle had a separate riddle function with all the text elements being added in manually from the run.py module. This was not an effective way of running the program so the separate code was condensed into one singular function which is passed variables as arguments for each riddle. This helped to cut down on the amount of excess code significantly. The riddles were also placed within a list of dictionaries to make access and organisation easier.
+* During the development process there were many bugs caused by indentation and line limit issues. To resolve this line breaks had to be added frequently to keep the amount of characters on each line within the limit. This also created some confusion with the indentation on the next line following a line break. Lines were being indented following a line break when they should not have been. This was simply resolved by removing the excess whitespace.
+* A bug also presented itself during development of the while loops in conjunction with the if/elif/else statements. In the early stages when a function was called from the if statement, the loop would also continue simultaneously. This was not the intended outcome. This bug created a continueous loop which the user could not escape from. This was resolved by breaking out of the loop using the frequent use of the break statement in the appropriate places.
+
 [Back to top](<#contents>)
 
 ### Unresolved
+
+* There is one unfortunate bug that hasn't been resolved. During the final stages of testing it was discovered that if a user types with the keyboard while the typewriter is printing storyboard elements to the terminal, the user characters appear in the terminal along with the printed text. These characters are then added into the user's next input choice, which is then processed by the program and could consequently lead to a correct user answer being evaluated as incorrect. To resolve this a function needs to be created to block user keyboard input while storyboard elements are being printed. Multiple potential solutions were trialled and tested but unfortunately, no easy fixes were found.
 
 [Back to top](<#contents>)
 
@@ -311,31 +336,83 @@ The Labyrinth of Riddles has many potential areas for future improvements/featur
 
 ## Project Deployment via Heroku
 
+This is a guide on how to deploy a project via [Heroku](https://www.heroku.com). 
+
+1. Type "pip3 freeze > requirements.txt" into the terminal command line to create a list of dependencies in the requirements.txt file for heroku to intall before starting the application.
+2. Add, commit and push changes up to GitHub.
+3. Open [Heroku](https://www.heroku.com) on the web browser and login or create an account.
+4. Once the account is open/created, click the "New" button in the top right hand corner and then click "Create new app" from the dropdown menu.
+
+![Heroku Deployment Create New App](readme-images/heroku-deployment-one.png)
+
+5. Enter an app name (this has to be unique on Heroku) and choose the local region in the dropdown box below. Then click the "Create app" button.
+
+![Heroku Deployment Choose Name and Region](readme-images/heroku-deployment-two.png)
+
+6. When the app dashboard is open click the "Settings" tab in the menu bar. Scroll down to the "Config Vars" section and click the "Reavel Config Vars" button. Any sensitive information not sent to GitHub, that is required for the running of the app, must be entered manually in this section. Any protected .json files need to be entered here. Go back to the project and copy all the data in the .json file. Paste the data into the "Value" field. In the "Key" field enter "CREDS" in all capitals. Then click the "Add" button.
+7. For projects using the Code Institute terminal, another Config Var needs to be added into this section. Enter "PORT" in all capitals into the "Key" field and "8000" into the "Value" field and click the "Add" button.
+
+![Heroku Deployment Enter Config Vars](readme-images/heroku-deployment-three.png)
+
+8. For projects using Python, scroll down to the "Buildpacks" section below. Click the "Add buildpack" button and select the "Python" option from the pop up window. Click the "Save Changes" button to exit the window.
+9. For projects that use the Code Insitute terminal, repeat the process and click the "Add buildpack" button again and select the "Nodejs" option from the pop up window. Click the "Save Changes" button to exit the window.
+10. Check the order of the buildpacks in the buildpacks section. Ensure that Python is above Nodejs. If it isn't, click and drag the Python bar using the three line icons until it is top of the list.
+
+![Heroku Deployment Enter Buildpacks](readme-images/heroku-deployment-four.png)
+
+11. Scroll up to the top of the page and click the "Deploy" tab on the main app menu. 
+12. When the deployment page opens, scroll down to the "Deployment method" section and click and select the "GitHub" option to connect Heroku to the repository on GitHub. Scroll down and click the "Connect to GitHub" button. Log into GitHub in the pop-up window if required, otherwise this should be done automatically.
+
+![Heroku Deployment Connect to GitHub](readme-images/heroku-deployment-five.png)
+
+13. In the "Connect to GitHub" section enter the repository name into the repo-name field and click the "Search" button. The repository name should appear below the field. Click the "Connect" button to connect the GitHub repository to Heroku.
+
+![Heroku Deployment Successfully Connected to GitHub](readme-images/heroku-deployment-six.png)
+
+14. If the last step was successful the "Deploy" page should change. Scroll down the page to the "Automatic deploys" and "Manual deploy" sections. To enable automatic deploys with each new GitHub push click the "Enable Automatic Deploys" button. To manually deploy click the "Deploy branch" button in the "Manual deploy" section. Ensure the "main"/"master" branch is selected from the drop down menus for both of these options if that is the latest branch of the project.
+
+![Heroku Deployment Manual or Automatic Deployment](readme-images/heroku-deployment-seven.png)
+
+15. If deployment is successful a prompt should appear with a "View" button to view the deployed app. Click the button to view the app deployment.
+
 [Back to top](<#contents>)
 
 # Credits
 
+In this section the various sources of code, content and tutorials for The Labyrinth of Riddles will be acknowledged and credited.
+
 ## Content
 
-STORYBOARD NARRATIVE - LABYRINTH
-LABYRINTH STRUCTURE - 
+* Parts of the storyboard narrative in the Labyrinth of Riddles was inspired by the [Labyrinth](https://www.imdb.com/title/tt0091369/) movie.
+* The Labyrinth structure was planned using an image from [Difference Between](http://www.differencebetween.info/difference-between-maze-and-labyrinth).
+* Riddle content was sourced from [Parade](https://parade.com/947956/parade/riddles/), [Readers Digest](https://www.rd.com/article/riddles-for-adults/) and [Womans Day](https://www.womansday.com/life/entertainment/a39225370/riddles-for-adults/). 
 
 [Back to top](<#contents>)
 
 ## Media
 
-TITLE
+* The Labyrinth of Riddles ASCII word-art title is a font called ANSI Shadow from [Patorjk](http://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20). 
 
 [Back to top](<#contents>)
 
 ## Code 
 
-TYPEWRITER EFFECT - STACK OVERFLOW - https://stackoverflow.com/questions/20302331/typing-effect-in-python
+* The typewriter effect code was acquired from [Stack Overflow](https://stackoverflow.com/questions/20302331/typing-effect-in-python).
 
 [Back to top](<#contents>)
 
 # Acknowledgements
 
+The Labyrinth of Riddles is the third project submission for the [Code Institute](https://codeinstitute.net/) Higher National Diploma of Full Stack Software Development. The project focusses purely on back-end functionality with the Python programming language. I thoroughly enjoyed learning how to use Python to implement back-end data input processing into a basic program. I am very much looking forward to being able to tie together all the languages I have learnt in the previous modules to build a full stack application for my next project. 
+
+I'd like to say a big thank you to my mentor [Precious Ijege](https://www.linkedin.com/in/precious-ijege-908a00168/) for his feedback and guidance throughout this project. 
+
+I would also like to thank the Code Institute Slack community, specifically the class of May 2022 for their support and feedback. Thank you to the Code Institute student care team and the tutor assistance. 
+
+Next I will be building a full stack application. I'm excited to rise to the challenge and continue working on my skills as a developer!
+
+Happy coding!
+
+Matthew Hobbs-Hurrell
+
 [Back to top](<#contents>)
-
-
