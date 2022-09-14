@@ -9,8 +9,54 @@ from storyboard import *
 # Module containing project word-art title
 from title import title_art
 
-# Variable for function loops
+# Global variable for function loops
 play_game = True
+
+# Global variable for username
+username = ""
+
+
+def process_name():
+    """
+    Username function.
+    Called at beginning of program after intro paragraph.
+    Features a while loop which continues until a suitable user input is
+    obtained.
+    User is prompted to enter a name. The user name input is processed
+    to lowercase and stripped of all surrounding whitespace.
+    There is then an if/elif/else statement to check if the username passes
+    certain requirements. If the username length is less that one character
+    or the username is greater than twenty characters the user is informed
+    that their input is either too long or too short and the loop repeats.
+    The characters of the user input are then looped through. If the characters
+    are all alphanumeric and/or contain spaces the global username variable is
+    updated to the user name input value stripped of excess whitespace with
+    each first letter of each word capitalised. The break statement is also
+    used to break out of the loop.
+    If the name input doesn't satisfy the previous conditions then it must
+    contain either a symbol or a number. The final elif statement loops
+    through the characters in the user input name again and checks if they
+    are digits. If any of them are the user is informed that the name cannot
+    contain a number and the loop is repeated.
+    Finally the else statement informs the user that the name cannot contain
+    a symbol and the loop is repeated.
+    """
+
+    while play_game:
+        name = input("    What is your name adventurer? \n    \
+").lower().strip()
+        if len(name) < 1:
+            print("\n    Length of username is too short. Please try again.\n")
+        elif len(name) > 20:
+            print("\n    Length of username is too long. Please try again.\n")
+        elif all(char.isalpha() or char.isspace() for char in name):
+            global username
+            username = " ".join(name.split()).title()
+            break
+        elif any(char.isdigit() for char in name):
+            print("\n    Name cannot contain a number. Please try again.\n")
+        else:
+            print("\n    Name cannot contain a symbol. Please try again.\n")
 
 
 def typewriter(text):
@@ -594,6 +640,8 @@ while play_game:
     begin labyrinth function. It also breaks out of the loop.
     No calls the quit function and exits the program.
     """
+    process_name()
+    typewriter(f"\n    Welcome {username}. \n\n")
     start = input("    Do you wish to enter the Labyrinth of Riddles? (yes/no)\
 \n    ").lower().strip()
     if start == "yes" or start == "y":
