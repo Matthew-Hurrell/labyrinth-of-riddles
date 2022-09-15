@@ -1,9 +1,12 @@
 """
-Storyboard variables for large text elements.
+Storyboard variables and functions for large text elements.
 Large text elements are saved into the storyboard module to avoid clutter
 in the run.py file.
 Storyboard variables are printed to the terminal from the run.py file
 functions.
+Storyboard functions are used to allow for the username variable to be
+passed as an argument from the run.py global variable to be used in
+f-strings in the storyboard module.
 """
 
 # Module for typewriter effect
@@ -64,6 +67,12 @@ first_paragraph = """
 
 
 def exit_labyrinth_function(username):
+    """
+    Exit labyrinth function.
+    Called from run.py exit function.
+    Prints the exit_labyrinth variable with a typewriter effect.
+    Includes the username variable from run.py passed as an argument.
+    """
     exit_labyrinth = f"""
     Until next time {username}!
 
@@ -114,6 +123,12 @@ path_one = """
 
 
 def final_words_function(username):
+    """
+    Final words function.
+    Called from run.py you_die function.
+    Prints the final_words variable with a typewriter effect.
+    Includes the username variable from run.py passed as an argument.
+    """
     final_words = f"""
     --------------------------------------------------------------
 
@@ -160,6 +175,12 @@ second_left = """
 
 
 def path_two_function(username):
+    """
+    Path two function.
+    Called from run.py second_chapter function.
+    Prints the path_two variable with a typewriter effect.
+    Includes the username variable from run.py passed as an argument.
+    """
     path_two = f"""
     --------------------------------------------------------------
 
@@ -181,6 +202,12 @@ def path_two_function(username):
 
 
 def second_paragraph_function(username):
+    """
+    Second paragraph function.
+    Called from run.py second_chapter function.
+    Prints the second_paragraph variable with a typewriter effect.
+    Includes the username variable from run.py passed as an argument.
+    """
     second_paragraph = f"""
     "You guessed correctly... I'm impressed."
 
@@ -201,6 +228,12 @@ def second_paragraph_function(username):
 
 
 def path_three_function(username):
+    """
+    Path three function.
+    Called from run.py second_riddle function.
+    Prints the path_three variable with a typewriter effect.
+    Includes the username variable from run.py passed as an argument.
+    """
     path_three = f"""
     --------------------------------------------------------------
 
@@ -293,6 +326,12 @@ path_four = """
 
 
 def third_paragraph_function(username):
+    """
+    Third paragraph function.
+    Called from run.py third_chapter function.
+    Prints the third_paragraph variable with a typewriter effect.
+    Includes the username variable from run.py passed as an argument.
+    """
     third_paragraph = f"""
     "Very good!"
 
@@ -307,6 +346,12 @@ def third_paragraph_function(username):
 
 
 def path_five_function(username):
+    """
+    Path five function.
+    Called from run.py third_riddle function.
+    Prints the path_five variable with a typewriter effect.
+    Includes the username variable from run.py passed as an argument.
+    """
     path_five = f"""
     --------------------------------------------------------------
 
@@ -352,6 +397,12 @@ which_question = """
 
 
 def path_six_function(username):
+    """
+    Path six function.
+    Called from run.py fourth_chapter function.
+    Prints the path_six variable with a typewriter effect.
+    Includes the username variable from run.py passed as an argument.
+    """
     path_six = f"""
     --------------------------------------------------------------
 
@@ -385,6 +436,12 @@ def path_six_function(username):
 
 
 def fourth_paragraph_function(username):
+    """
+    Fourth paragraph function.
+    Called from run.py fourth_chapter function.
+    Prints the fourth_paragraph variable with a typewriter effect.
+    Includes the username variable from run.py passed as an argument.
+    """
     fourth_paragraph = f"""
     "You've bested me again {username}."
 
@@ -507,6 +564,12 @@ path_eight = """
 
 
 def fifth_paragraph_function(username):
+    """
+    Fifth paragraph function.
+    Called from run.py fifth_chapter function.
+    Prints the fifth_paragraph variable with a typewriter effect.
+    Includes the username variable from run.py passed as an argument.
+    """
     fifth_paragraph = f"""
     "Correct again!"
 
@@ -527,6 +590,12 @@ def fifth_paragraph_function(username):
 
 
 def path_nine_function(username):
+    """
+    Path nine function.
+    Called from run.py fifth_riddle function.
+    Prints the path_nine variable with a typewriter effect.
+    Includes the username variable from run.py passed as an argument.
+    """
     path_nine = f"""
     --------------------------------------------------------------
 
@@ -573,6 +642,12 @@ def path_nine_function(username):
 
 
 def path_ten_function(username):
+    """
+    Path ten function.
+    Called from run.py sixth_riddle function.
+    Prints the path_ten variable with a typewriter effect.
+    Includes the username variable from run.py passed as an argument.
+    """
     path_ten = f"""
     "Very good. Correct again."
 
@@ -592,6 +667,12 @@ def path_ten_function(username):
 
 
 def end_paragraph_function(username):
+    """
+    End paragraph function.
+    Called from run.py end function.
+    Prints the end_paragraph variable with a typewriter effect.
+    Includes the username variable from run.py passed as an argument.
+    """
     end_paragraph = f"""
     "CORRECT!" Shouts the Riddler.
 
@@ -632,6 +713,12 @@ def end_paragraph_function(username):
 
 
 def good_ending_function(username):
+    """
+    Good ending function.
+    Called from run.py leave function.
+    Prints the good_ending variable with a typewriter effect.
+    Includes the username variable from run.py passed as an argument.
+    """
     good_ending = f"""
     --------------------------------------------------------------
 
@@ -660,6 +747,12 @@ def good_ending_function(username):
 
 
 def bad_ending_function(username):
+    """
+    Bad ending function.
+    Called from run.py take_treasure function.
+    Prints the bad_ending variable with a typewriter effect.
+    Includes the username variable from run.py passed as an argument.
+    """
     bad_ending = f"""
     --------------------------------------------------------------
 
