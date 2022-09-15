@@ -9,11 +9,10 @@ from storyboard import *
 # Module containing project word-art title
 from title import title_art
 
+import config
+
 # Global variable for function loops
 play_game = True
-
-# Global variable for username
-username = ""
 
 
 def process_name():
@@ -50,13 +49,14 @@ def process_name():
         elif len(name) > 20:
             print("\n    Length of username is too long. Please try again.\n")
         elif all(char.isalpha() or char.isspace() for char in name):
-            global username
-            username = " ".join(name.split()).title()
+            config.username = " ".join(name.split()).title()
             break
         elif any(char.isdigit() for char in name):
-            print("\n    Name cannot contain a number. Please try again.\n")
+            print("\n    Your name cannot contain a number. Please try again.\
+\n")
         else:
-            print("\n    Name cannot contain a symbol. Please try again.\n")
+            print("\n    Your name cannot contain a symbol. Please try again.\
+\n")
 
 
 def typewriter(text):
@@ -205,7 +205,7 @@ def riddle_me_this(riddle_question, riddle_answer, next_path, alt_answer):
                 you_die()
                 break
             else:
-                typewriter('\n    "You guessed incorrectly. Try again"')
+                typewriter('\n    "You guessed incorrectly. Try again"\n')
 
 
 def door_riddle():
@@ -641,7 +641,7 @@ while play_game:
     No calls the quit function and exits the program.
     """
     process_name()
-    typewriter(f"\n    Welcome {username}. \n\n")
+    typewriter(f"\n    Welcome {config.username}. \n\n")
     start = input("    Do you wish to enter the Labyrinth of Riddles? (yes/no)\
 \n    ").lower().strip()
     if start == "yes" or start == "y":

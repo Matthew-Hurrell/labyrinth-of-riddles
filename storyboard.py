@@ -6,6 +6,8 @@ Storyboard variables are printed to the terminal from the run.py file
 functions.
 """
 
+import config
+
 intro_paragraph = """
     Greetings adventurer!
 
@@ -21,8 +23,10 @@ intro_paragraph = """
 
 """
 
-first_paragraph = """
+first_paragraph = f"""
     --------------------------------------------------------------
+
+    {config.username}
 
     You find yourself facing the doorway to the beginning of the Labyrinth.
 
@@ -44,8 +48,8 @@ first_paragraph = """
 
 """
 
-exit_labyrinth = """
-    Until next time adventurer!
+exit_labyrinth = f"""
+    Until next time {config.username}!
 
     --------------------------------------------------------------
 
