@@ -1,2 +1,4 @@
-# Global variable for username
-username = ""
+
+class user:
+    def __init__(self, name):
+        self.name = name

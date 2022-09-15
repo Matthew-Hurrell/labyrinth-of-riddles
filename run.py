@@ -14,6 +14,7 @@ import config
 # Global variable for function loops
 play_game = True
 
+new = ""
 
 def process_name():
     """
@@ -42,16 +43,18 @@ def process_name():
     """
 
     while play_game:
-        name = input("    What is your name adventurer? \n    \
+        username = input("    What is your name adventurer? \n    \
 ").lower().strip()
-        if len(name) < 1:
+        if len(username) < 1:
             print("\n    Length of username is too short. Please try again.\n")
-        elif len(name) > 20:
+        elif len(username) > 20:
             print("\n    Length of username is too long. Please try again.\n")
-        elif all(char.isalpha() or char.isspace() for char in name):
-            config.username = " ".join(name.split()).title()
+        elif all(char.isalpha() or char.isspace() for char in username):
+            username = " ".join(username.split()).title()
+            global new
+            new = config.user(username)
             break
-        elif any(char.isdigit() for char in name):
+        elif any(char.isdigit() for char in username):
             print("\n    Your name cannot contain a number. Please try again.\
 \n")
         else:
@@ -613,7 +616,8 @@ def begin_labyrinth():
     go back function.
     Exit calls the exit function.
     """
-    typewriter(first_paragraph)
+    #typewriter(first_paragraph)
+    first(new.name)
     while play_game:
         choice = input("    Which path will you choose? (forward/left/exit) \n\
     ").lower().strip()
@@ -641,7 +645,7 @@ while play_game:
     No calls the quit function and exits the program.
     """
     process_name()
-    typewriter(f"\n    Welcome {config.username}. \n\n")
+    typewriter(f"\n    Welcome {new.name}. \n\n")
     start = input("    Do you wish to enter the Labyrinth of Riddles? (yes/no)\
 \n    ").lower().strip()
     if start == "yes" or start == "y":

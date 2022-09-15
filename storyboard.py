@@ -8,6 +8,22 @@ functions.
 
 import config
 
+# Module for typewriter effect
+import sys
+# Module for typewriter time delay
+from time import sleep
+
+def typewriter(text):
+    """
+    Function for typewriter terminal effect.
+    Loops through text input and prints each character with slight delay.
+    Code acquired from Stack Overflow. Link in README.
+    """
+    for char in text:
+        sleep(0.04)
+        sys.stdout.write(char)
+        sys.stdout.flush()
+
 intro_paragraph = """
     Greetings adventurer!
 
@@ -22,11 +38,12 @@ intro_paragraph = """
     never return.
 
 """
+def first(name):
 
-first_paragraph = f"""
+    first_paragraph = f"""
     --------------------------------------------------------------
 
-    {config.username}
+    {name}
 
     You find yourself facing the doorway to the beginning of the Labyrinth.
 
@@ -48,8 +65,10 @@ first_paragraph = f"""
 
 """
 
-exit_labyrinth = f"""
-    Until next time {config.username}!
+    typewriter(first_paragraph)
+
+exit_labyrinth = """
+    Until next time adventurer!
 
     --------------------------------------------------------------
 
