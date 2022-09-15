@@ -6,12 +6,11 @@ Storyboard variables are printed to the terminal from the run.py file
 functions.
 """
 
-import config
-
 # Module for typewriter effect
 import sys
 # Module for typewriter time delay
 from time import sleep
+
 
 def typewriter(text):
     """
@@ -23,6 +22,7 @@ def typewriter(text):
         sleep(0.04)
         sys.stdout.write(char)
         sys.stdout.flush()
+
 
 intro_paragraph = """
     Greetings adventurer!
@@ -38,12 +38,9 @@ intro_paragraph = """
     never return.
 
 """
-def first(name):
 
-    first_paragraph = f"""
+first_paragraph = """
     --------------------------------------------------------------
-
-    {name}
 
     You find yourself facing the doorway to the beginning of the Labyrinth.
 
@@ -65,14 +62,16 @@ def first(name):
 
 """
 
-    typewriter(first_paragraph)
 
-exit_labyrinth = """
-    Until next time adventurer!
+def exit_labyrinth_function(username):
+    exit_labyrinth = f"""
+    Until next time {username}!
 
     --------------------------------------------------------------
 
 """
+    typewriter(exit_labyrinth)
+
 
 left = """
     --------------------------------------------------------------
@@ -113,20 +112,25 @@ path_one = """
 
 """
 
-final_words = """
+
+def final_words_function(username):
+    final_words = f"""
     --------------------------------------------------------------
 
     "Your three guesses are up."
 
     The Ridder raises his hand.
 
-    "You are not worthy... YOU FAILED! BE GONE!"
+    "You are not worthy {username}... YOU FAILED! BE GONE!"
 
     There is a bright flash and everything fades to black...
 
     GAME OVER.
 
 """
+
+    typewriter(final_words)
+
 
 second_left = """
     --------------------------------------------------------------
@@ -154,7 +158,9 @@ second_left = """
 
 """
 
-path_two = """
+
+def path_two_function(username):
+    path_two = f"""
     --------------------------------------------------------------
 
     Infront of you there are two pathways.
@@ -167,11 +173,15 @@ path_two = """
 
     You lean in to have a closer look.
 
-    It reads "Whatever you do, don't go left."
+    It reads "{username}. Whatever you do, don't go left."
 
 """
 
-second_paragraph = """
+    typewriter(path_two)
+
+
+def second_paragraph_function(username):
+    second_paragraph = f"""
     "You guessed correctly... I'm impressed."
 
     "It's been a thousand years since someone solved one of my riddles."
@@ -180,14 +190,18 @@ second_paragraph = """
 
     "But don't get cocky. I always save my hardest riddles for last!"
 
-    "I'll see you soon... if you survive."
+    "I'll see you soon {username}... if you survive."
 
     There's a blinding flash of light.
 
     You shade your eyes and the Riddler vanishes from sight.
 """
 
-path_three = """
+    typewriter(second_paragraph)
+
+
+def path_three_function(username):
+    path_three = f"""
     --------------------------------------------------------------
 
     You decide to follow the advice of the carvings on the wall and
@@ -204,13 +218,16 @@ path_three = """
     Suddenly there is another flash of light and the Riddler appears
     infront of you.
 
-    "Well well... I think it's time for another riddle!"
+    "Well well {username}... I think it's time for another riddle!"
 
     The Riddler points at you.
 
     "Riddle me this."
 
 """
+
+    typewriter(path_three)
+
 
 forward = """
     --------------------------------------------------------------
@@ -274,15 +291,23 @@ path_four = """
 
 """
 
-third_paragraph = """
-    "Very good! Another correct answer. This is getting interesting!"
 
-    "I'm sure I'll see you again soon adventurer!"
+def third_paragraph_function(username):
+    third_paragraph = f"""
+    "Very good!"
+
+    "Another correct answer. This is getting interesting!"
+
+    "I'm sure I'll see you again soon {username}!"
 
     The Riddler vanishes again in another flash of light.
 """
 
-path_five = """
+    typewriter(third_paragraph)
+
+
+def path_five_function(username):
+    path_five = f"""
     --------------------------------------------------------------
 
     You follow the steep path to your left upwards.
@@ -297,7 +322,7 @@ path_five = """
     When you re-open them you see the Riddler standing at the top
     of the slope.
 
-    "What a surprise that you are still alive adventurer!"
+    "What a surprise that you are still alive {username}"
 
     "Let's see if you are worthy of continuing my labyrinth."
 
@@ -306,6 +331,9 @@ path_five = """
     "Riddle me this."
 
 """
+
+    typewriter(path_five)
+
 
 which_question = """
     --------------------------------------------------------------
@@ -322,7 +350,9 @@ which_question = """
 
 """
 
-path_six = """
+
+def path_six_function(username):
+    path_six = f"""
     --------------------------------------------------------------
 
     You finish climbing to the end of the slope.
@@ -332,7 +362,7 @@ path_six = """
     There are also two identical doors. One to your left and one to
     your right.
 
-    "Greetings adventurer. Congratulations on making it this far."
+    "Greetings {username}. Congratulations on making it this far."
 
     "We are the guardians of the doors."
 
@@ -351,8 +381,12 @@ path_six = """
 
 """
 
-fourth_paragraph = """
-    "You've bested me again adventurer."
+    typewriter(path_six)
+
+
+def fourth_paragraph_function(username):
+    fourth_paragraph = f"""
+    "You've bested me again {username}."
 
     "From now on I'm not going to be so easy on you."
 
@@ -360,6 +394,9 @@ fourth_paragraph = """
 
     The Riddler vanishes again in another flash of light.
 """
+
+    typewriter(fourth_paragraph)
+
 
 right_door_choice = """
     --------------------------------------------------------------
@@ -468,7 +505,9 @@ path_eight = """
 
 """
 
-fifth_paragraph = """
+
+def fifth_paragraph_function(username):
+    fifth_paragraph = f"""
     "Correct again!"
 
     "You truly possess a formidable intellect. I will give you that."
@@ -479,12 +518,16 @@ fifth_paragraph = """
 
     "But the hardest part is yet to come."
 
-    "Until next time adventurer."
+    "Until next time {username}."
 
     The Riddler vanishes again in another flash of light.
 """
 
-path_nine = """
+    typewriter(fifth_paragraph)
+
+
+def path_nine_function(username):
+    path_nine = f"""
     --------------------------------------------------------------
 
     You take the right path and walk through into the open area.
@@ -507,7 +550,7 @@ path_nine = """
 
     A figure steps out from behind it.
 
-    "Here we are adventurer."
+    "Here we are {username}."
 
     "I knew from the first moment I saw you that we would end up here."
     The Riddler says.
@@ -526,7 +569,11 @@ path_nine = """
 
 """
 
-path_ten = """
+    typewriter(path_nine)
+
+
+def path_ten_function(username):
+    path_ten = f"""
     "Very good. Correct again."
 
     "You are a true mastermind."
@@ -535,13 +582,17 @@ path_ten = """
 
     "I have saved the best for last."
 
-    "Do not disappoint me."
+    "Do not disappoint me {username}."
 
     "Riddle me this."
 
 """
 
-end_paragraph = """
+    typewriter(path_ten)
+
+
+def end_paragraph_function(username):
+    end_paragraph = f"""
     "CORRECT!" Shouts the Riddler.
 
     "You have done it!"
@@ -557,7 +608,7 @@ end_paragraph = """
 
     "The treasure is yours! But this treasure comes at a price."
 
-    "Beware the curse of greed!"
+    "{username}! Beware the curse of greed!"
 
     The hood falls backwards and for a split second you see a quick smile
     on the figures face before they burst into a blinding flash of light.
@@ -577,7 +628,11 @@ end_paragraph = """
 
 """
 
-good_ending = """
+    typewriter(end_paragraph)
+
+
+def good_ending_function(username):
+    good_ending = f"""
     --------------------------------------------------------------
 
     "Beware the curse of greed."
@@ -591,7 +646,7 @@ good_ending = """
     back one last time at the labyrinth before you turn the handle
     and walk through the doorway into the bright light beyond.
 
-    CONGRATULATIONS ADVENTURER!!
+    CONGRATULATIONS {username.upper()}!!
 
     You completed the labyrinth of riddles!
 
@@ -601,7 +656,11 @@ good_ending = """
 
 """
 
-bad_ending = """
+    typewriter(good_ending)
+
+
+def bad_ending_function(username):
+    bad_ending = f"""
     --------------------------------------------------------------
 
     The treasure is yours!
@@ -656,7 +715,7 @@ bad_ending = """
     Helpless to escape, you feel the hood of the cloak slowly rise over the
     back of your head and over your face.
 
-    "Beware the curse of greed."
+    "{username}. Beware the curse of greed."
 
     The Riddlers words ring in your ears as everything fades to black.
 
@@ -670,3 +729,5 @@ bad_ending = """
     GAME OVER.
 
 """
+
+    typewriter(bad_ending)

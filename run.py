@@ -9,12 +9,12 @@ from storyboard import *
 # Module containing project word-art title
 from title import title_art
 
-import config
-
 # Global variable for function loops
 play_game = True
 
-new = ""
+# Global variable for username
+username = ""
+
 
 def process_name():
     """
@@ -43,35 +43,23 @@ def process_name():
     """
 
     while play_game:
-        username = input("    What is your name adventurer? \n    \
+        name = input("    What is your name adventurer? \n    \
 ").lower().strip()
-        if len(username) < 1:
+        if len(name) < 1:
             print("\n    Length of username is too short. Please try again.\n")
-        elif len(username) > 20:
+        elif len(name) > 20:
             print("\n    Length of username is too long. Please try again.\n")
-        elif all(char.isalpha() or char.isspace() for char in username):
-            username = " ".join(username.split()).title()
-            global new
-            new = config.user(username)
+        elif all(char.isalpha() or char.isspace() for char in name):
+            global username
+            username = " ".join(name.split()).title()
             break
-        elif any(char.isdigit() for char in username):
+        elif any(char.isdigit() for char in name):
             print("\n    Your name cannot contain a number. Please try again.\
 \n")
         else:
             print("\n    Your name cannot contain a symbol. Please try again.\
 \n")
 
-
-def typewriter(text):
-    """
-    Function for typewriter terminal effect.
-    Loops through text input and prints each character with slight delay.
-    Code acquired from Stack Overflow. Link in README.
-    """
-    for char in text:
-        sleep(0.04)
-        sys.stdout.write(char)
-        sys.stdout.flush()
 
 # Prints word-art title to terminal
 print(title_art)
@@ -121,7 +109,7 @@ def exit():
         sure = input("\n    Are you sure you wish to exit? Progress\
  will be lost. (yes/no)\n    ").lower().strip()
         if sure == "yes" or sure == "y":
-            typewriter(exit_labyrinth)
+            exit_labyrinth_function(username)
             quit()
         elif sure == "no" or sure == "n":
             print("")
@@ -161,7 +149,7 @@ def you_die():
     Prints the final words text variable from the storyboard module and
     calls the play again function.
     """
-    typewriter(final_words)
+    final_words_function(username)
     play_again()
 
 
@@ -313,7 +301,7 @@ def leave():
     Displays the good ending text from the storyboard module and calls the
     play again function.
     """
-    typewriter(good_ending)
+    good_ending_function(username)
     play_again()
 
 
@@ -332,7 +320,7 @@ def end():
     Leaving the treasure calls the leave function and breaks out of the
     loop.
     """
-    typewriter(end_paragraph)
+    end_paragraph_function(username)
     while play_game:
         choice = input("    Do you take the treasure or leave without it? (\
 take/leave) \n    ").lower().strip()
@@ -359,7 +347,7 @@ def sixth_riddle():
     Calls riddle me this function and passes the variables declared into
     the function arguments.
     """
-    typewriter(path_ten)
+    path_ten_function(username)
     riddle_question = riddle[5]["riddle"]
     riddle_answer = riddle[5]["correct"]
     next_path = end
@@ -379,7 +367,7 @@ def fifth_riddle():
     Calls riddle me this function and passes the variables declared into
     the function arguments.
     """
-    typewriter(path_nine)
+    path_nine_function(username)
     riddle_question = riddle[4]["riddle"]
     riddle_answer = riddle[4]["correct"]
     next_path = sixth_riddle
@@ -402,7 +390,7 @@ def fifth_chapter():
     The user input is converted into lowercase and stripped of all
     surrounding whitespace before it is processed.
     """
-    typewriter(fifth_paragraph)
+    fifth_paragraph_function(username)
     typewriter(path_eight)
     while play_game:
         choice = input("    Which path will you choose? (left/right/exit) \n\
@@ -460,8 +448,8 @@ def fourth_chapter():
     module.
     Calls the door riddle function.
     """
-    typewriter(fourth_paragraph)
-    typewriter(path_six)
+    fourth_paragraph_function(username)
+    path_six_function(username)
     door_riddle()
 
 
@@ -482,7 +470,7 @@ def third_riddle():
     riddle_answer = riddle[2]["correct"]
     next_path = fourth_chapter
     alt_answer = "a spider"
-    typewriter(path_five)
+    path_five_function(username)
     riddle_me_this(riddle_question, riddle_answer, next_path, alt_answer)
 
 
@@ -504,7 +492,7 @@ def third_chapter():
     calls the play again function.
     Exit calls the exit function.
     """
-    typewriter(third_paragraph)
+    third_paragraph_function(username)
     typewriter(path_four)
     while play_game:
         choice = input("    Which path do you take? (left/right/forward/exit)\
@@ -541,7 +529,7 @@ def second_riddle():
     riddle_answer = riddle[1]["correct"]
     next_path = third_chapter
     alt_answer = "a castle"
-    typewriter(path_three)
+    path_three_function(username)
     riddle_me_this(riddle_question, riddle_answer, next_path, alt_answer)
 
 
@@ -561,8 +549,8 @@ def second_chapter():
     calls the play again function.
     Exit calls the exit function.
     """
-    typewriter(second_paragraph)
-    typewriter(path_two)
+    second_paragraph_function(username)
+    path_two_function(username)
     while play_game:
         choice = input("    Which path will you choose? (left/right/exit) \n\
     ").lower().strip()
@@ -616,8 +604,7 @@ def begin_labyrinth():
     go back function.
     Exit calls the exit function.
     """
-    #typewriter(first_paragraph)
-    first(new.name)
+    typewriter(first_paragraph)
     while play_game:
         choice = input("    Which path will you choose? (forward/left/exit) \n\
     ").lower().strip()
@@ -645,7 +632,7 @@ while play_game:
     No calls the quit function and exits the program.
     """
     process_name()
-    typewriter(f"\n    Welcome {new.name}. \n\n")
+    typewriter(f"\n    Welcome {username}. \n\n")
     start = input("    Do you wish to enter the Labyrinth of Riddles? (yes/no)\
 \n    ").lower().strip()
     if start == "yes" or start == "y":
@@ -653,6 +640,7 @@ while play_game:
         begin_labyrinth()
         break
     elif start == "no" or start == "n":
+        exit_labyrinth_function(username)
         quit()
     else:
         print("    Invalid input. Please try again. \n")
