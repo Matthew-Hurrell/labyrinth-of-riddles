@@ -18,7 +18,7 @@ username = ""
 
 def process_name():
     """
-    Username function.
+    Process name function.
     Called at beginning of program after intro paragraph.
     Features a while loop which continues until a suitable user input is
     obtained.
