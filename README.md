@@ -73,6 +73,7 @@ Link to the live site - [The Labyrinth of Riddles](https://labyrinth-of-riddles.
 * As a user I want different endings and outcomes based on my choices.
 * As a user I want to be able to go back to a previous junction if I face a dead end in the labyrinth.
 * As a user I want to be presented with multiple choices throughout the game that allow me to choose my own path.
+* As a user I want to be able to enter my name at the beginning of the program, so my name can be added into the storyline for a more personal experience.
 
 [Back to top](<#contents>)
 
@@ -84,7 +85,7 @@ The Labyrinth of Riddles is structured using various loops and functions to allo
 
 ## Typography 
 
-Because The Labyrinth of Riddles is a terminal program, style and design options are very limited. Font type and colour is default to the terminal but escape codes are used when printing the riddle elements to the terminal to make them more eye-catching to the user. The riddle dictionary items all contain bold (\033[1m) and italic (\x1B[3m) escape commands as well as the closing codes at the end of each riddle (\x1B[0m) and (\033[0m) to ensure the subsequent text isn't also affected.
+Because The Labyrinth of Riddles is a terminal program, style and design options are very limited. Font type and colour is default to the terminal but escape codes are used when printing the riddle elements to the terminal to make them more eye-catching to the user. The riddle dictionary items all contain bold (\033[1m) and italic (\x1B[3m) escape commands as well as the closing codes at the end of each riddle to ensure the subsequent text isn't also affected.
 
 [Back to top](<#contents>)
 
@@ -134,7 +135,7 @@ The Labyrinth of Riddles maze structure is based off of an image found online at
 
 ### Typewriter Effect
 
-A typewriter effect is used to add a minor animation effect to large blocks of text. This provides a more interesting experience for the user and also helps the user to differentiate new text elements from previous paragraphs. It also provides a time delay between printing each character to roughly similate a users reading speed. The typewriter function is defined in the run.py python module. The function is passed variables containing strings as an argument and uses a loop to print each character within the string with a slight time delay. To enable this functionality, run.py imports sys (system), and sleep from the time module at the beginning of the program. Text is then printed to the terminal using the typewriter effect by passing in a storyboard text variable in the appropriate chapter or section of the program.
+A typewriter effect is used to add a minor animation effect to large blocks of text. This provides a more interesting experience for the user and also helps the user to differentiate new text elements from previous paragraphs. It also provides a time delay between printing each character to roughly similate a users reading speed. The typewriter function is defined in the storyboard.py python module. The function is passed variables containing strings as an argument and uses a loop to print each character within the string with a slight time delay. To enable this functionality, storyboard.py imports sys (system), and sleep from the time module at the beginning of the program. Text is then printed to the terminal using the typewriter effect by passing in a storyboard text variable in the appropriate chapter or section of the program. Because everything is imported from storyboard.py to run.py, the run module is also able to use the typewriter function from the storyboard module to print certain small text elements. 
 
 ![Typewriter Function](readme-images/typewriter-function.png)
 

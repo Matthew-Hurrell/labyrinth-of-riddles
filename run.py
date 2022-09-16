@@ -86,7 +86,7 @@ def play_again():
             begin_labyrinth()
             break
         elif start == "no" or start == "n":
-            typewriter(exit_labyrinth)
+            exit_labyrinth_function(username)
             quit()
         else:
             print("    Invalid input. Please try again. \n")
