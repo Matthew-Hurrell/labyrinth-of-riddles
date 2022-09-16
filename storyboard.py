@@ -367,7 +367,7 @@ def path_five_function(username):
     When you re-open them you see the Riddler standing at the top
     of the slope.
 
-    "What a surprise that you are still alive {username}"
+    "What a surprise that you are still alive {username}."
 
     "Let's see if you are worthy of continuing my labyrinth."
 
