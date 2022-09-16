@@ -61,13 +61,6 @@ def process_name():
 \n")
 
 
-# Prints word-art title to terminal
-print(title_art)
-
-# Prints intro paragraph to terminal
-typewriter(intro_paragraph)
-
-
 def play_again():
     """
     Play again function.
@@ -75,17 +68,22 @@ def play_again():
     Features a while loop which evaluates user input and either begins
     the program again from the start or exits the program.
     The loop continues until a valid input is received from the user.
+    User input of yes prints a small line of text to the screen and calls
+    the begin labyrinth function to start the game again.
+    User input no calls the exit labyrinth function from
+    storyboard.py and passes in the username variable. The quit function
+    is also called to exit the program.
     The user input is converted into lowercase and stripped of all
     surrounding whitespace before it is processed.
     """
     while play_game:
-        start = input("    Do you wish to play again? (yes/no) \n    \
+        start_again = input("    Do you wish to play again? (yes/no) \n    \
 ").lower().strip()
-        if start == "yes" or start == "y":
+        if start_again == "yes" or start_again == "y":
             typewriter("\n    Let it begin! \n")
             begin_labyrinth()
             break
-        elif start == "no" or start == "n":
+        elif start_again == "no" or start_again == "n":
             exit_labyrinth_function(username)
             quit()
         else:
@@ -94,11 +92,13 @@ def play_again():
 
 def exit_game():
     """
-    Exit function.
+    Exit game function.
     Called when a user enters exit into an input during the program.
     Features a while loop which prompts the user to confirm their
     decision to exit the program.
-    Confirming the exit displays a short exit message and exits the program.
+    Confirming the exit calls the exit labyrinth function from
+    storyboard.py and passes in the username variable. The quit function
+    is also called to exit the program.
     Declining the exit breaks out of the loop and returns the user to the
     previous loop.
     The loop continues until a valid input is received from the user.
@@ -124,7 +124,7 @@ def go_back():
     Called when a user reaches a dead end in the labyrinth.
     Features a while loop which gives the user the option of returning back
     to the previous junction or exiting the labyrinth.
-    Exiting the labyrinth calls the exit function.
+    Exiting the labyrinth calls the exit game function.
     Returning back breaks out of the loop into the previous loop.
     The loop continues until a valid input is received from the user.
     The user input is converted into lowercase and stripped of all
@@ -146,8 +146,8 @@ def you_die():
     """
     Character death function.
     Called when a user runs out of guesses for any of the riddles.
-    Prints the final words text variable from the storyboard module and
-    calls the play again function.
+    Calls the final words function from storyboard and passes in
+    the username variable. Also calls the play again function.
     """
     final_words_function(username)
     play_again()
@@ -171,7 +171,7 @@ def riddle_me_this(riddle_question, riddle_answer, next_path, alt_answer):
     If the user is incorrect one is deducted from the guesses variable and
     the variable is checked to see if it is 0. If it is the user is out of
     guesses and the you die function is called.
-    A user can also exit the program and the exit function is called.
+    A user can also exit the program and the exit game function is called.
     The loop continues until a valid input is received from the user.
     The user input is converted into lowercase and stripped of all
     surrounding whitespace before it is processed.
@@ -210,7 +210,7 @@ def door_riddle():
     Right door calls the right door function which ends in a death.
     Left door moves the user forward into the next chapter and calls the
     fourth riddle function.
-    A user can also exit the program and the exit function is called.
+    A user can also exit the program and the exit game function is called.
     The loop continues until a valid input is received from the user.
     The user input is converted into lowercase and stripped of all
     surrounding whitespace before it is processed.
@@ -286,10 +286,10 @@ def take_treasure():
     """
     Take treasure function.
     Called when the user opts to take the treasure at the end of the program.
-    Displays the bad ending text from the storyboard module and calls the
-    play again function.
+    Calls the bad ending function from the storyboard module and passes in
+    the username variable. Also calls the play again function.
     """
-    typewriter(bad_ending)
+    bad_ending_function(username)
     play_again()
 
 
@@ -298,8 +298,8 @@ def leave():
     Leave function.
     Called when the user opts to leave the treasure and exit the labyrinth
     at the end of the program.
-    Displays the good ending text from the storyboard module and calls the
-    play again function.
+    Calls the the good ending function from the storyboard module and passes
+    in the username variable. Also calls the play again function.
     """
     good_ending_function(username)
     play_again()
@@ -309,7 +309,8 @@ def end():
     """
     End function.
     Called when the user answers the final riddle correctly.
-    Prints the end paragraph from the storyboard module.
+    Calls the end function from the storyboard module and passes
+    in the username variable.
     Features a loop with a user input giving the user a choice to take
     or leave the treasure.
     The loop continues until a valid input is received from the user.
@@ -339,7 +340,8 @@ def sixth_riddle():
     Sixth riddle function.
     Called after successfully answering the fifth riddle in the fifth riddle
     function.
-    Prints path ten from the storyboard module.
+    Calls the path ten function from the storyboard module and passes in the
+    username variable.
     Sets variables to riddle question and riddle answer to the sixth riddle
     in the riddles list of dictionaries.
     Sets the variables for the next path to call the end function and the
@@ -359,7 +361,8 @@ def fifth_riddle():
     """
     Fifth riddle function.
     Called after taking the right path in the fifth chapter.
-    Prints path nine from the storyboard module.
+    Calls the path nine function from the storyboard module and passes in the
+    username variable.
     Sets variables to riddle question and riddle answer to the fifth riddle
     in the riddles list of dictionaries.
     Sets the variables for the next path to call the end function and the
@@ -379,7 +382,8 @@ def fifth_chapter():
     """
     Fifth chapter function.
     Called after a user successfully answers the fourth riddle.
-    Prints fifth paragraph and path eight from the storyboard module.
+    Calls the fifth paragraph function and passes in the username variable.
+    Also prints path eight from the storyboard module.
     Declares a loop which gives the user an option to either go left, right
     or exit the labyrinth.
     Right calls teh fifth riddle function and breaks out of the loop.
@@ -444,8 +448,8 @@ def fourth_chapter():
     """
     Fourth chapter function.
     Called when the user correctly answers the third riddle.
-    Prints the fourth paragraph and path six variables from the storyboard
-    module.
+    Calls both the fourth paragraph and path six functions from the storyboard
+    module and passes in the username variable.
     Calls the door riddle function.
     """
     fourth_paragraph_function(username)
@@ -458,7 +462,8 @@ def third_riddle():
     Third riddle function.
     Called after the user chooses the left option in the third chapter
     function.
-    Prints path five from the storyboard module.
+    Calls the path five function and passes in the username variable from
+    the storyboard module.
     Sets variables to riddle question and riddle answer to the third riddle
     in the riddles list of dictionaries.
     Sets the variables for the next path to call the fourth chapter function
@@ -478,8 +483,8 @@ def third_chapter():
     """
     Third chapter function.
     Called when the user answers the second riddle correctly.
-    Prints the third paragraph and path four variables from the storyboard
-    module.
+    Calls the third paragraph function and passes in the username variable.
+    Also prints the path four storyboard variable.
     Declares a while loop which asks the user which path they wish to take.
     Also gives the user an option the exit the program.
     The loop continues until a valid input is received from the user.
@@ -490,7 +495,7 @@ def third_chapter():
     the go back function.
     Forward prints the forward variable from the storyboard module and
     calls the play again function.
-    Exit calls the exit function.
+    Exit calls the exit game function.
     """
     third_paragraph_function(username)
     typewriter(path_four)
@@ -517,7 +522,8 @@ def second_riddle():
     Second riddle function.
     Called after the user chooses the right option in the second chapter
     function.
-    Prints path three from the storyboard module.
+    Calls the path three function from the storyboard module and passes in
+    the username variable.
     Sets variables to riddle question and riddle answer to the second riddle
     in the riddles list of dictionaries.
     Sets the variables for the next path to call the third chapter function
@@ -537,8 +543,8 @@ def second_chapter():
     """
     Second chapter function.
     Called when the user answers the first riddle correctly.
-    Prints the second paragraph and path two variables from the storyboard
-    module.
+    Calls both the second paragraph and path two functions and passes in the
+    username variable.
     Declares a while loop which asks the user which path they wish to take.
     Also gives the user an option the exit the program.
     The loop continues until a valid input is received from the user.
@@ -547,7 +553,7 @@ def second_chapter():
     Right calls the second riddle function and breaks out of the loop.
     Left prints the second left variable from the storyboard function and
     calls the play again function.
-    Exit calls the exit function.
+    Exit calls the exit game function.
     """
     second_paragraph_function(username)
     path_two_function(username)
@@ -602,7 +608,7 @@ def begin_labyrinth():
     Forward calls the first riddle function and breaks out of the loop.
     Left prints the left variable from the storyboard module and calls the
     go back function.
-    Exit calls the exit function.
+    Exit calls the exit game function.
     """
     typewriter(first_paragraph)
     while play_game:
@@ -620,6 +626,13 @@ def begin_labyrinth():
             print("    Invalid input. Please try again. \n")
 
 
+# Prints word-art title to terminal
+print(title_art)
+
+# Prints intro paragraph to terminal
+typewriter(intro_paragraph)
+
+
 while play_game:
     """
     Start game while loop.
@@ -629,7 +642,8 @@ while play_game:
     Asks the user if they wish to enter the labyrinth of riddles.
     Yes prints a small section of text to the terminal and calls the
     begin labyrinth function. It also breaks out of the loop.
-    No calls the quit function and exits the program.
+    No calls the exit labyrinth function and passes in the username
+    variable. The quit function is also called to exit the program.
     """
     process_name()
     typewriter(f"\n    Welcome {username}. \n\n")

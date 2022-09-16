@@ -32,12 +32,13 @@ Link to the live site - [The Labyrinth of Riddles](https://labyrinth-of-riddles.
         * [Riddle Me This Function](<#riddle-me-this-function>) 
         * [Door Riddle Function](<#door-riddle>)       
         * [Play Again Function](<#play-again-function>) 
-        * [Exit Function](<#exit-function>) 
+        * [Exit Game Function](<#exit-game-function>) 
         * [Go Back Function](<#go-back-function>) 
         * [You Die Function](<#play-again-function>) 
         * [End Function](<#end-function>) 
         * [Multiple Endings](<#multiple-endings>) 
     * [**Future Features**](<#future-features>)
+    * [**Data Model**](<#data-model>)
 * [**Technologies Used**](<#technologies-used>)
 * [**Testing**](<#testing>)
      * [**Validator Tests**](<#validator-tests>)
@@ -105,9 +106,9 @@ The title for The Labyrinth of Riddles is the first element displayed in the ter
 
 ### Storyboard
 
-The large paragraphs of text required for the storyboard are saved into variables in a seperate python module called storyboard.py. This helps to avoid unnecessary clutter in the run.py main python module. The storyboard variables consist of multi-line strings defined by the triple quotation marks opening and closing syntax. This allows for all indentation and paragraphing to remain easily editable and consistent. The storyboard.py module is imported into the run.py file along with all its contents. All storyboard variables are printed to the terminal using the typewriter function from the run.py file. Variables are printed in the relevant chapters in the story as the user progresses through the labyrinth. The story is all original but elements are inspired by the [Labyrinth](https://www.imdb.com/title/tt0091369/) movie. Text content is written to engage the user in the storyline with fantasy role playing elements. The user charater is kept gender neutral to not alienate any audience interested in playing.
+The large paragraphs of text required for the storyboard are saved into variables in a seperate python module called storyboard.py. This helps to avoid unnecessary clutter in the run.py main python module. The storyboard variables consist of multi-line strings defined by the triple quotation marks opening and closing syntax. This allows for all indentation and paragraphing to remain easily editable and consistent. The module also contains functions which are called from the run.py module and passed the username variable as an argument. This is so the username can be entered into the storyboard elements using f-strings to create a more personal user experience. The storyboard.py module is imported into the run.py file along with all its contents. All storyboard variables are printed to the terminal using the typewriter function from the run.py file. Variables are printed in the relevant chapters in the story as the user progresses through the labyrinth. The story is all original but elements are inspired by the [Labyrinth](https://www.imdb.com/title/tt0091369/) movie. Text content is written to engage the user in the storyline with fantasy role playing elements. The user charater is kept gender neutral to not alienate any audience interested in playing.
 
-![Storyboard.py file](readme-images/storyboard.png)
+![Storyboard.py file](readme-images/storyboard-file.png)
 
 ![Storyboard Intro Paragraph](readme-images/storyboard-two.png)
 
@@ -129,7 +130,7 @@ The riddles used throughout the program are saved into a separate python module 
 
 The Labyrinth of Riddles maze structure is based off of an image found online at [Difference Between](http://www.differencebetween.info/difference-between-maze-and-labyrinth). The use of an image for the maze structure greatly helped with the planning stage of the labyrinth. Navigational choices throughout the Labyrinth of Riddles follow the structure of the maze image. Dead ends either lead to characters deaths or the opportunity to go back to the previous junction. Each correct navigational choice leads to another riddle and progression to the next chapter.
 
-![Labyrinth Structure Image](readme-images/Labyrinth-structure.png)
+![Labyrinth Structure Image](readme-images/labyrinth-structure.png)
 
 [Back to top](<#contents>)
 
@@ -173,7 +174,7 @@ The process name function is called on run.py at the beginning of the program af
 
 ### Chapter Functions
 
-There are five chapter functions which are defined in the run.py module. The functions are normally called after a user makes a correct riddle choice. Chapter functions begin by using the typewriter effect to print one or more  variables from the storyboard module to the terminal. The user is then presented with a navigational choice which is a if/elif/else statement wrapped in a while loop. A valid user choice breaks the user out of the loop and calls the next function. The user is also given the option to exit the labyrinth/program at each navigational choice.
+There are five chapter functions which are defined in the run.py module. The functions are normally called after a user makes a correct riddle choice. Chapter functions begin by either using the typewriter effect to print one or more variables from the storyboard module to the terminal, or by calling a function from the storyboard module and passing in the username variable. The user is then presented with a navigational choice which is a if/elif/else statement wrapped in a while loop. A valid user choice breaks the user out of the loop and calls the next function. The user is also given the option to exit the labyrinth/program at each navigational choice.
 
 ![Chapter Function](readme-images/chapter-function.png)
 
@@ -183,7 +184,7 @@ There are five chapter functions which are defined in the run.py module. The fun
 
 ### Riddle Functions
 
-There are six riddles and six riddle functions in the Labyrinth of Riddles. The riddle functions are usually called by making a correct navigational choice. The main purpose of the riddle functions is to assign new riddle variables and then call and pass the riddle me this function the variables as arguments. They are also used to print storyboard text elements to the terminal. Variables assigned with the riddle functions are the riddle question dictionary location, the riddle answer dictionary location, the next path which calls the function that the user navigates to when the riddle is answered correctly and an alternative answer to the riddle.
+There are six riddles and six riddle functions in the Labyrinth of Riddles. The riddle functions are usually called by making a correct navigational choice. The main purpose of the riddle functions is to assign new riddle variables and then call and pass the riddle me this function the variables as arguments. They are also used to print storyboard text elements to the terminal either by calling the storyboard functions or using the typewriter function. Variables assigned with the riddle functions are the riddle question dictionary location, the riddle answer dictionary location, the next path which calls the function that the user navigates to when the riddle is answered correctly and an alternative answer to the riddle.
 
 ![Riddle Functions](readme-images/riddle-functions.png)
 
@@ -191,7 +192,7 @@ There are six riddles and six riddle functions in the Labyrinth of Riddles. The 
 
 ### Riddle Me This Function
 
-The riddle me this function is the function used for each riddle section of the program. It is passed four arguments from the riddle functions - riddle_question, riddle_answer, next_path and alt_answer. The function is defined in the run.py module. The function first loops through the riddle_question string from the assigned riddle dictionary and uses the typewriter effect to print each character individually to the terminal. Then a variable called guesses is assigned the value of 3. A while loop is then defined which prints the users number of available guesses assigned to the guesses variable to the terminal. The user is also reminded that they can exit the labyrinth/program by typing "exit" into the input. The user is then prompted to make a guess at the answer to the riddle with an input. An if/elif/else statement is then defined to check if the user input matches a number of different answers. If the user choice matches the riddle_answer or alt_answer variables the user is correct and the break statement is used to break the user out of the loop. The next_path variable function is also called to send the user to the next function. The user input is also tested for the exit command which triggers the exit function. If the user input that doesn't match either the if or elif options the else statement is triggered and the guesses variable is decreased by the value of 1. Another if/else statement is then defined to check if the guesses variable is equal to zero. If the guesses variable is equal to zero this means the user has run out of guesses and the you_die function is called along with a break statement. Otherwise the user is advised that they guessed incorrectly and the loop repeats. 
+The riddle me this function is the function used for each riddle section of the program. It is passed four arguments from the riddle functions - riddle_question, riddle_answer, next_path and alt_answer. The function is defined in the run.py module. The function first loops through the riddle_question string from the assigned riddle dictionary and uses the typewriter effect to print each character individually to the terminal. Then a variable called guesses is assigned the value of 3. A while loop is then defined which prints the users number of available guesses assigned to the guesses variable to the terminal. The user is also reminded that they can exit the labyrinth/program by typing "exit" into the input. The user is then prompted to make a guess at the answer to the riddle with an input. An if/elif/else statement is then defined to check if the user input matches a number of different answers. If the user choice matches the riddle_answer or alt_answer variables the user is correct and the break statement is used to break the user out of the loop. The next_path variable function is also called to send the user to the next function. The user input is also tested for the exit command which triggers the exit game function. If the user input that doesn't match either the if or elif options the else statement is triggered and the guesses variable is decreased by the value of 1. Another if/else statement is then defined to check if the guesses variable is equal to zero. If the guesses variable is equal to zero this means the user has run out of guesses and the you_die function is called along with a break statement. Otherwise the user is advised that they guessed incorrectly and the loop repeats.
 
 ![Riddle Me This Function](readme-images/riddle-me-this-function.png)
 
@@ -203,9 +204,7 @@ The riddle me this function is the function used for each riddle section of the 
 
 The door riddle function is a larger function which features multiple nested if/elif/else statements. The purpose of this function is to provide the user with a new interesting challenge, which the user interacts with slightly differently in comparison to the riddle functions. The door riddle is based on a famous riddle which features in the [Labyrinth](https://www.imdb.com/title/tt0091369/) movie. First an available_questions variable is assigned the value of 1. Then a while loop is defined which checks if the value of the available_questions variable is 1. If it is the user is given the choice of whether to choose a door, ask a question, or exit the labyrinth/program. If the user chooses the door option they are given a choice of the left or right door. Choosing the left door is the correct option and breaks the loop and calls the fourth_riddle function. Choosing the right door calls the right_door function and also breaks the loop. Invalid input from the user repeats the door option loop until the user enters a valid option. If the user chooses the ask option instead of door the storyboard variable which_question is printed using the typewriter effect to the terminal which displays four question options to ask. Another while loop is defined with a user input asking the user which question they would like to ask. An if/elif/else statement is then defined to check user input to match with one of the four questions. If user input doesn't match the loop repeats itself until a valid input is obtained. If a valid input is entered by the user the answer to the matching question is printed to the terminal and the available_questions variable is decreased by the value of 1 making it 0. The nested loop is then broken out of using the break statement and the user is returned to the orginal loop. The value of the variable available_questions is tested, and if it does not equal 1 the user is then sent directly to the else statement which prompts the user to pick a door without the option to ask a question as they have already asked their one question. This else statement features another nested if/elif/else statement which functions exactly the same as if the user decided to choose a door before asking a question. 
 
-![Door Riddle Function Part One](readme-images/door-riddle-one.png)
-
-![Door Riddle Function Part Two](readme-images/door-riddle-two.png)
+![Door Riddle Function Part One](readme-images/door-riddle-function.png)
 
 ![Door Riddle Terminal Display Part One](readme-images/door-riddle-terminal.png)
 
@@ -215,7 +214,7 @@ The door riddle function is a larger function which features multiple nested if/
 
 ### Play Again Function
 
-The play again function is defined on the run.py module. It is called when a player character dies or when the you_die function is called after failing a riddle challenge. The purpose of this function is to give the user an option to restart the game or quit the program. The function features a while loop which displays the question to the user of whether they would like to play again or not. The while loop contains an if/elif/else statement which checks the users input and either calls the begin_labyrinth function and breaks out of the loop, prints a goodbye message and calls the quit function or displays an invalid input message and repeats the loop. The loop repeats until a valid input is received from the user.
+The play again function is defined on the run.py module. It is called when a player character dies or when the you_die function is called after failing a riddle challenge. The purpose of this function is to give the user an option to restart the game or quit the program. The function features a while loop which displays the question to the user of whether they would like to play again or not. The while loop contains an if/elif/else statement which checks the users input. A user intput of "yes" calls the begin_labyrinth function and breaks out of the loop. A user input of "no" calls the exit labyrinth function and passes in the username variable. It also calls the quit function to exit the program. An invalid input displays an invalid input message and repeats the loop. The loop repeats until a valid input is received from the user.
 
 ![Play Again Function](readme-images/play-again-function.png)
 
@@ -223,19 +222,19 @@ The play again function is defined on the run.py module. It is called when a pla
 
 [Back to top](<#contents>)
 
-### Exit Function
+### Exit Game Function
 
-The exit function is called whenever a user enters the exit command into the terminal input. The purpose of this function is to provide the user with a visual reminder that they will lose their progress if they exit. The user is then given an opportunity to confirm their choice or return back to their previous position in the game. The function features a while loop with a nested if/elif/else statement. Confirming the exit will print a small goodbye message and quit the program. Invalid input will print a small invalid input message to the terminal and repeat the loop. If the user decides to return back the break statement is used to break out of the while loop and return to the previous function.
+The exit game function is called whenever a user enters the exit command into the terminal input. The purpose of this function is to provide the user with a visual reminder that they will lose their progress if they exit. The user is then given an opportunity to confirm their choice or return back to their previous position in the game. The function features a while loop with a nested if/elif/else statement. Confirming the exit will call the exit labyrinth function and pass in the username variable. It also calls the quit function to exit the program. Invalid input will print a small invalid input message to the terminal and repeat the loop. If the user decides to return back the break statement is used to break out of the while loop and return to the previous function.
 
-![Exit Function](readme-images/exit-function.png)
+![Exit Function](readme-images/exit-game-function.png)
 
 ![Exit Terminal Display](readme-images/exit-terminal.png)
 
 [Back to top](<#contents>)
 
-### Go Back 
+### Go Back Function
 
-The go back function is called when a user reaches a dead end in the labyrinth. The purpose of this function is to give the user the choice to return back to their previous junction or exit the program/labyrinth. The function features a while loop with a nested if/elif/else statement. The user is asked whether they wish to return back or exit the labyrinth. Their input is processed and checked for a match against the two options and if no match is found an invalid input statement is printed to the terminal and the loop repeats until a valid user input is received. If the user chooses to go back, a small section of text is printed using the typewriter effect to the terminal and the loop is broken out of using the break statement. This returns the user to the previous function loop choice. If the user chooses to exit the program the exit function is called.
+The go back function is called when a user reaches a dead end in the labyrinth. The purpose of this function is to give the user the choice to return back to their previous junction or exit the program/labyrinth. The function features a while loop with a nested if/elif/else statement. The user is asked whether they wish to return back or exit the labyrinth. Their input is processed and checked for a match against the two options and if no match is found an invalid input statement is printed to the terminal and the loop repeats until a valid user input is received. If the user chooses to go back, a small section of text is printed using the typewriter effect to the terminal and the loop is broken out of using the break statement. This returns the user to the previous function loop choice. If the user chooses to exit the program the exit game function is called.
 
 ![Go Back Function](readme-images/go-back-function.png)
 
@@ -245,7 +244,7 @@ The go back function is called when a user reaches a dead end in the labyrinth. 
 
 ### You Die Function
 
-The you die function is called when a user runs out of guesses in the riddle challenges. The function prints the storyboard variable final_words using the typewriter effect to the terminal and then calls the play_again function to give the user the option to play again from the beginning. 
+The you die function is called when a user runs out of guesses in the riddle challenges. The function calls the final words function and passes in the username variable, and then calls the play_again function to give the user the option to play again from the beginning. 
 
 ![You Die Function](readme-images/you-die-function.png)
 
@@ -255,7 +254,7 @@ The you die function is called when a user runs out of guesses in the riddle cha
 
 ### End Function
 
-The end function is called when the user answers the final riddle correctly. The purpose of the end function is to print the final storyboard paragraph and give the user their final choice before concluding the game. This function also features a while loop with a nested if/elif/else statement. The user is given the option to take or leave the treasure. Taking the treasure calls the take_treasure function and breaks out of the loop. Leaving the treasure calls the leave function and breaks out of the loop. If the user input is invalid a please try again statement is printed to the terminal and the loop repeats. 
+The end function is called when the user answers the final riddle correctly. The purpose of the end function is to call the end paragraph function and pass in the username variable and give the user their final choice before concluding the game. This function also features a while loop with a nested if/elif/else statement. The user is given the option to take or leave the treasure. Taking the treasure calls the take_treasure function and breaks out of the loop. Leaving the treasure calls the leave function and breaks out of the loop. If the user input is invalid a please try again statement is printed to the terminal and the loop repeats. 
 
 ![End Function](readme-images/end-function.png)
 
@@ -265,9 +264,9 @@ The end function is called when the user answers the final riddle correctly. The
 
 ### Multiple Endings
 
-There are two possible endings at the end of the program after the end function is called. These endings are defined using the functions of take_treasure and leave. Both of these functions print their individual storyboard elements to the terminal using the typewriter effect and then call the play_again function to give the user the option to play again or quit the game/program. Multiple endings were added to enhance game replayability and the user overall experience. The endings also round off the narrative nicely and provide a good moral to the story.
+There are two possible endings at the end of the program after the end function is called. These endings are defined using the functions of take_treasure and leave. Both of these functions call their respective storyboard functions and pass in the username varibale, and then call the play_again function to give the user the option to play again or quit the game/program. Multiple endings were added to enhance game replayability and the user overall experience. The endings also round off the narrative nicely and provide a good moral to the story.
 
-![Ending Functions](readme-images/ending-functions.png)
+![Ending Functions](readme-images/multiple-endings.png)
 
 ![Take Treasure Terminal Display](readme-images/take-treasure-terminal.png)
 
@@ -285,7 +284,12 @@ The Labyrinth of Riddles has many potential areas for future improvements/featur
 * The labyrinth could be extended to be larger with more choices and riddles. There could also be a new feature to allow a user to continue from a checkpoint using a code if their character dies or they exit the game.
 * More possible alternate endings could be added based on user choices. Game narrative could be developed to make earlier user choices drastically effect the final outcome.
 * The labyrinth could feature different settings for difficulty for less advanced users. Easier settings could reduce the size of the labyrinth and the difficulty of the riddles for novice or younger players.
-* A leaderboard section could be implemented where users enter their name upon completion of the labyrinth. This section could also record the number of deaths before completion and whether the user became a riddler or not.
+
+[Back to top](<#contents>)
+
+## Data Model
+
+The Labyrinth of Riddles file structure is kept relatively basic. The run.py file is used for the main functions. Nearly all of the functions and loops are stored and executed from run.py. There is also a riddles.py module which contains one list of six dictionaries containing the riddle data for the program. The riddles.py module is imported into the run.py module and the dictionary values are selected and used within the riddle functions. There is a title.py file which contains the ASCII word art title and finally a storyboard.py file which contains all the large text elements. Both the title.py and storyboard.py modules are imported into the run.py file. The storyboard module also contains functions for the text elements that contain the username variable. The username is saved to a global variable in the run.py module.
 
 [Back to top](<#contents>)
 
@@ -341,12 +345,13 @@ The Labyrinth of Riddles program has been tested extensively to check for user i
 * In the early stages of the project development there was no riddle me this function. Each riddle had a separate riddle function with all the text elements being added in manually from the run.py module. This was not an effective way of running the program so the separate code was condensed into one singular function which is passed variables as arguments for each riddle. This helped to cut down on the amount of excess code significantly. The riddles were also placed within a list of dictionaries to make access and organisation easier.
 * During the development process there were many bugs caused by indentation and line limit issues. To resolve this line breaks had to be added frequently to keep the amount of characters on each line within the limit. This also created some confusion with the indentation on the next line following a line break. Lines were being indented following a line break when they should not have been. This was simply resolved by removing the excess whitespace.
 * A bug also presented itself during development of the while loops in conjunction with the if/elif/else statements. In the early stages when a function was called from the if statement, the loop would also continue simultaneously. This was not the intended outcome. This bug created a continueous loop which the user could not escape from. This was resolved by breaking out of the loop using the frequent use of the break statement in the appropriate places.
+* One of the last large functions to implement was the process name function. This feature created a number of bugs. One of the main issues was being able to access and use the username variable across multiple python modules. The variable needed to be accessed from both the run.py module and the storyboard.py module. Importing the run.py variable to the storyboard.py module created a circular error due to both files importing each other. Many solutions were tested, including creating a separate file to store the variable, which just ended up created more bugs. Ultimately the easiest solution was to make certain storyboard elements functions, which were then passed the username variable as an argument from run.py. This allowed the username variable to be used in the text elements in storyboard.py and resolved the bug.
 
 [Back to top](<#contents>)
 
 ### Unresolved
 
-* There is one unfortunate bug that hasn't been resolved. During the final stages of testing it was discovered that if a user types with the keyboard while the typewriter is printing storyboard elements to the terminal, the user characters appear in the terminal along with the printed text. These characters are then added into the user's next input choice, which is then processed by the program and could consequently lead to a correct user answer being evaluated as incorrect. To resolve this a function needs to be created to block user keyboard input while storyboard elements are being printed. Multiple potential solutions were trialled and tested but unfortunately, no easy fixes were found.
+* There is one unfortunate bug that hasn't been resolved. During the final stages of testing it was discovered that if a user types with the keyboard while the typewriter is printing storyboard elements to the terminal, the user characters appear in the terminal along with the printed text. These characters are then added into the user's next input choice, which is then processed by the program and could consequently lead to a correct user answer being evaluated as incorrect. To resolve this, a function needs to be created to block user keyboard input while storyboard elements are being printed. Multiple potential solutions were trialled and tested but unfortunately, no easy fixes were found.
 
 [Back to top](<#contents>)
 
@@ -410,6 +415,7 @@ In this section the various sources of code, content and tutorials for The Labyr
 ## Media
 
 * The Labyrinth of Riddles ASCII word-art title is a font called ANSI Shadow from [Patorjk](http://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20). 
+* The data model flowchart used in this readme was designed using [Draw.io](https://www.draw.io)
 
 [Back to top](<#contents>)
 
