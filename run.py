@@ -92,7 +92,7 @@ def play_again():
             print("    Invalid input. Please try again. \n")
 
 
-def exit():
+def exit_game():
     """
     Exit function.
     Called when a user enters exit into an input during the program.
@@ -137,7 +137,7 @@ def go_back():
             typewriter(return_back)
             break
         elif back == "exit" or back == "e":
-            exit()
+            exit_game()
         else:
             print("\n    Invalid input. Please try again. \n")
 
@@ -189,7 +189,7 @@ def riddle_me_this(riddle_question, riddle_answer, next_path, alt_answer):
             next_path()
             break
         elif choice == "exit" or choice == "e" or choice == '"exit"':
-            exit()
+            exit_game()
         else:
             guesses -= 1
             if guesses == 0:
@@ -264,7 +264,7 @@ def door_riddle():
                     else:
                         print("    Invalid input. Please try again. \n")
             elif choice == "exit" or choice == "e":
-                exit()
+                exit_game()
             else:
                 print("    Invalid input. Please try again. \n")
         else:
@@ -277,7 +277,7 @@ def door_riddle():
                 fourth_riddle()
                 break
             elif choice == "exit" or choice == "e":
-                exit()
+                exit_game()
             else:
                 print("    Invalid input. Please try again. \n")
 
@@ -402,7 +402,7 @@ def fifth_chapter():
             typewriter(left_descent)
             play_again()
         elif choice == "exit" or choice == "e":
-            exit()
+            exit_game()
         else:
             print("    Invalid input. Please try again. \n")
 
@@ -507,7 +507,7 @@ def third_chapter():
             typewriter(forward)
             play_again()
         elif choice == "exit" or choice == "e":
-            exit()
+            exit_game()
         else:
             print("    Invalid input. Please try again. \n")
 
@@ -561,7 +561,7 @@ def second_chapter():
             typewriter(second_left)
             play_again()
         elif choice == "exit" or choice == "e":
-            exit()
+            exit_game()
         else:
             print("    Invalid input. Please try again. \n")
 
@@ -615,7 +615,7 @@ def begin_labyrinth():
             typewriter(left)
             go_back()
         elif choice == "exit" or choice == "e":
-            exit()
+            exit_game()
         else:
             print("    Invalid input. Please try again. \n")
 
