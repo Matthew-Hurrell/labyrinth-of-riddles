@@ -291,6 +291,10 @@ The Labyrinth of Riddles has many potential areas for future improvements/featur
 
 The Labyrinth of Riddles file structure is kept relatively basic. The run.py file is used for the main functions. Nearly all of the functions and loops are stored and executed from run.py. There is also a riddles.py module which contains one list of six dictionaries containing the riddle data for the program. The riddles.py module is imported into the run.py module and the dictionary values are selected and used within the riddle functions. There is a title.py file which contains the ASCII word art title and finally a storyboard.py file which contains all the large text elements. Both the title.py and storyboard.py modules are imported into the run.py file. The storyboard module also contains functions for the text elements that contain the username variable. The username is saved to a global variable in the run.py module.
 
+Below is a basic data model flow chart showcasing how the underlying functions of the program fit together, and how user data is processed during the primary gameplay loops.
+
+![Data Model Flow Chart](readme-images/labyrinth-of-riddles.flowchart.png)
+
 [Back to top](<#contents>)
 
 # Technologies Used
@@ -302,6 +306,7 @@ The Labyrinth of Riddles file structure is kept relatively basic. The run.py fil
 * [Git](https://git-scm.com/) - Software for tracking changes to files. Used with GitPod to add, commit and push code changes to the repository on GitHub. 
 * [Apple Notes](https://www.icloud.com/notes) - A simple Apple app used to write and plan storyboard elements and content for the program.
 * [Slack](https://www.icloud.com/notes) - An online messaging program designed for workplace collaboration. Used for advice and guidance from peers and tutors. 
+* [Draw.io](https://www.draw.io) - A free online flowchart maker. Used to create the data model flowchart for this readme.
 
 [Back to top](<#contents>)
 
@@ -415,7 +420,6 @@ In this section the various sources of code, content and tutorials for The Labyr
 ## Media
 
 * The Labyrinth of Riddles ASCII word-art title is a font called ANSI Shadow from [Patorjk](http://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20). 
-* The data model flowchart used in this readme was designed using [Draw.io](https://www.draw.io)
 
 [Back to top](<#contents>)
 
